@@ -10,28 +10,40 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
-// Load registry from directories
-async function loadRegistry() {
-    const registry = {};
+// Load registry from directories recursively
+async function scanDirectory(dir, registry, prefix = '') {
     try {
-        const items = await fs.readdir('.');
+        const items = await fs.readdir(dir);
         for (const item of items) {
-            const mcpJsonPath = path.join(item, 'mcp.json');
+            const fullPath = path.join(dir, item);
+            const mcpJsonPath = path.join(fullPath, 'mcp.json');
+            const relativePath = prefix ? path.join(prefix, item) : item;
+            
             try {
-                const stat = await fs.stat(item);
+                const stat = await fs.stat(fullPath);
                 if (stat.isDirectory()) {
+                    // Check for mcp.json in current directory
                     try {
                         const configData = await fs.readFile(mcpJsonPath, 'utf8');
-                        registry[item] = JSON.parse(configData);
+                        registry[relativePath] = JSON.parse(configData);
                     } catch (err) {
-                        // Skip if mcp.json doesn't exist or can't be read
-                        continue;
+                        // If no mcp.json, continue scanning subdirectories
+                        await scanDirectory(fullPath, registry, relativePath);
                     }
                 }
             } catch (err) {
                 continue;
             }
         }
+    } catch (err) {
+        console.error(`Error scanning directory ${dir}:`, err);
+    }
+}
+
+async function loadRegistry() {
+    const registry = {};
+    try {
+        await scanDirectory('.', registry);
         return registry;
     } catch (err) {
         console.error('Error loading registry:', err);
