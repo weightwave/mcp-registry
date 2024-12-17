@@ -1,0 +1,7 @@
+{
+  "description": "A Model Context Protocol (MCP) server lets AI assistants like Claude use the Exa AI Search API for web searches",
+  "command": "npx",
+  "args": ["-y", "@exa-labs/exa-mcp-server"],
+  "type": "stdio",
+  "parameters": {}
+}

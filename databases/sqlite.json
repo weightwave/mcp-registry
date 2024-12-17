@@ -1,0 +1,7 @@
+{
+  "description": "SQLite database operations with built-in analysis features",
+  "command": "npx",
+  "args": ["-y", "@modelcontextprotocol/server-sqlite"],
+  "type": "stdio",
+  "parameters": {}
+}

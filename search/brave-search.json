@@ -1,0 +1,7 @@
+{
+  "description": "Web search capabilities using Brave's Search API",
+  "command": "npx",
+  "args": ["-y", "@modelcontextprotocol/server-brave-search"],
+  "type": "stdio",
+  "parameters": {}
+}

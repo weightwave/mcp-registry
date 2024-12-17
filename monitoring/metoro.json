@@ -1,0 +1,7 @@
+{
+  "description": "Query and interact with kubernetes environments monitored by Metoro",
+  "command": "npx",
+  "args": ["-y", "@metoro-io/metoro-mcp-server"],
+  "type": "stdio",
+  "parameters": {}
+}

@@ -1,0 +1,7 @@
+{
+  "description": "Direct local file system access",
+  "command": "npx",
+  "args": ["-y", "@modelcontextprotocol/server-filesystem"],
+  "type": "stdio",
+  "parameters": {}
+}
