@@ -10,22 +10,25 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
-// Load registry from directories
-async function loadRegistry() {
-    const registry = {};
+// Load registry from directories recursively
+async function scanDirectory(dir, registry = [], prefix = '') {
     try {
-        const items = await fs.readdir('.');
+        const items = await fs.readdir(dir);
         for (const item of items) {
-            const mcpJsonPath = path.join(item, 'mcp.json');
+            const fullPath = path.join(dir, item);
+            const mcpJsonPath = path.join(fullPath, 'mcp.json');
+            const relativePath = prefix ? path.join(prefix, item) : item;
+            
             try {
-                const stat = await fs.stat(item);
+                const stat = await fs.stat(fullPath);
                 if (stat.isDirectory()) {
                     try {
                         const configData = await fs.readFile(mcpJsonPath, 'utf8');
-                        registry[item] = JSON.parse(configData);
+                        const mcpData = JSON.parse(configData);
+                        registry.push(mcpData);
                     } catch (err) {
-                        // Skip if mcp.json doesn't exist or can't be read
-                        continue;
+                        // If no mcp.json, continue scanning subdirectories
+                        await scanDirectory(fullPath, registry, relativePath);
                     }
                 }
             } catch (err) {
@@ -34,8 +37,17 @@ async function loadRegistry() {
         }
         return registry;
     } catch (err) {
+        console.error(`Error scanning directory ${dir}:`, err);
+        return registry;
+    }
+}
+
+async function loadRegistry() {
+    try {
+        return await scanDirectory('.');
+    } catch (err) {
         console.error('Error loading registry:', err);
-        return {};
+        return [];
     }
 }
 
@@ -54,50 +66,48 @@ app.get('/registry', async (req, res) => {
     }
 });
 
-// Get specific MCP configuration
-app.get('/registry/:name', async (req, res) => {
-    try {
-        const registry = await loadRegistry();
-        const name = req.params.name;
-        
-        if (!registry[name]) {
-            return res.status(404).json({ error: `MCP '${name}' not found` });
-        }
-        
-        res.json({
-            name,
-            config: registry[name]
-        });
-    } catch (err) {
-        res.status(500).json({ error: 'Failed to load registry item' });
-    }
-});
-
 // Search registry
 app.get('/search', async (req, res) => {
     try {
+        const { q } = req.query;
+        if (!q) {
+            return res.status(400).json({ error: 'Search query is required' });
+        }
+
         const registry = await loadRegistry();
-        const query = (req.query.q || '').toLowerCase();
+        const searchTerm = q.toLowerCase();
         
-        if (!query) {
-            return res.json(registry);
-        }
-        
-        const results = {};
-        for (const [name, config] of Object.entries(registry)) {
-            if (name.toLowerCase().includes(query) || 
-                config.description.toLowerCase().includes(query)) {
-                results[name] = config;
-            }
-        }
-        
+        const results = registry.filter(mcp => {
+            return (
+                mcp.id.toLowerCase().includes(searchTerm) ||
+                mcp.title.toLowerCase().includes(searchTerm) ||
+                mcp.description.toLowerCase().includes(searchTerm) ||
+                (mcp.tags && mcp.tags.some(tag => tag.toLowerCase().includes(searchTerm)))
+            );
+        });
+
         res.json(results);
     } catch (err) {
-        res.status(500).json({ error: 'Failed to search registry' });
+        res.status(500).json({ error: 'Search failed' });
     }
 });
 
-// Start server
+// Get specific MCP by ID
+app.get('/registry/:id', async (req, res) => {
+    try {
+        const registry = await loadRegistry();
+        const mcp = registry.find(m => m.id === req.params.id);
+        
+        if (!mcp) {
+            return res.status(404).json({ error: 'MCP not found' });
+        }
+        
+        res.json(mcp);
+    } catch (err) {
+        res.status(500).json({ error: 'Failed to get MCP' });
+    }
+});
+
 app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+    console.log(`Server running on port ${PORT}`);
 });
