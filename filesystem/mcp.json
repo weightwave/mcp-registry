@@ -1,0 +1,20 @@
+{
+    "id": "filesystem",
+    "title": "Filesystem",
+    "description": "Secure file operations with configurable access controls",
+    "tags": [
+        "file operation"
+    ],
+    "creator": "Official",
+    "logoUrl": "https://app.mcphub.net/server-configuration/image/filesystem.svg",
+    "publishDate": "2024-12-08T18:00:00Z",
+    "rating": 5,
+    "commandInfo": {
+        "command": "npx",
+        "args": [
+            "-y",
+            "@modelcontextprotocol/server-filesystem",
+            "$ALLOWED_DIRS|path$"
+        ]
+    }
+}

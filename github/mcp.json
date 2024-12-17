@@ -1,0 +1,23 @@
+{
+    "id": "github",
+    "title": "Github",
+    "description": "Repository management, file operations, and GitHub API integration",
+    "tags": [
+        "git",
+        "github"
+    ],
+    "creator": "Official",
+    "logoUrl": "https://app.mcphub.net/server-configuration/image/github.svg",
+    "publishDate": "2024-12-13T12:00:00Z",
+    "rating": 5,
+    "commandInfo": {
+        "command": "npx",
+        "args": [
+            "-y",
+            "@modelcontextprotocol/server-github"
+        ],
+        "env": {
+            "GITHUB_PERSONAL_ACCESS_TOKEN": "<YOUR_GITHUB_TOKEN>"
+        }
+    }
+}
