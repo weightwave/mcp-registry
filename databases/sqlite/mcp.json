@@ -1,0 +1,28 @@
+{
+  "description": "SQLite database operations with built-in analysis features",
+  "command": "npx",
+  "args": ["-y", "@modelcontextprotocol/server-sqlite"],
+  "type": "stdio",
+  "parameters": {
+    "database_path": {
+      "type": "string",
+      "required": true,
+      "description": "Path to SQLite database file",
+      "argTemplate": "--database={value}"
+    },
+    "mode": {
+      "type": "string",
+      "required": false,
+      "default": "rw",
+      "description": "Access mode (ro=readonly, rw=read-write)",
+      "argTemplate": "--mode={value}"
+    },
+    "journal_mode": {
+      "type": "string",
+      "required": false,
+      "default": "wal",
+      "description": "SQLite journal mode (delete, truncate, persist, memory, wal, off)",
+      "argTemplate": "--journal-mode={value}"
+    }
+  }
+}

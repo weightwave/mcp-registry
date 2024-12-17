@@ -1,0 +1,39 @@
+{
+  "description": "Google Drive integration for listing, reading, and searching files",
+  "command": "npx",
+  "args": ["-y", "@modelcontextprotocol/server-google-drive"],
+  "type": "stdio",
+  "parameters": {
+    "client_id": {
+      "type": "string",
+      "required": true,
+      "description": "Google OAuth client ID",
+      "argTemplate": "--client-id={value}"
+    },
+    "client_secret": {
+      "type": "string",
+      "required": true,
+      "description": "Google OAuth client secret",
+      "argTemplate": "--client-secret={value}"
+    },
+    "refresh_token": {
+      "type": "string",
+      "required": true,
+      "description": "OAuth refresh token for long-term access",
+      "argTemplate": "--refresh-token={value}"
+    },
+    "root_folder_id": {
+      "type": "string",
+      "required": false,
+      "description": "ID of the root Google Drive folder to use",
+      "argTemplate": "--root-folder={value}"
+    },
+    "share_mode": {
+      "type": "string",
+      "required": false,
+      "default": "private",
+      "description": "Default sharing mode for new files (private, anyone, domain)",
+      "argTemplate": "--share-mode={value}"
+    }
+  }
+}

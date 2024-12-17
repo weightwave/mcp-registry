@@ -1,0 +1,26 @@
+{
+  "description": "Integration with Cloudflare services including Workers, KV, R2, and D1",
+  "command": "npx",
+  "args": ["-y", "@cloudflare/mcp-server-cloudflare"],
+  "type": "stdio",
+  "parameters": {
+    "api_token": {
+      "type": "string",
+      "required": true,
+      "description": "Cloudflare API token for authentication",
+      "argTemplate": "--api-token={value}"
+    },
+    "account_id": {
+      "type": "string",
+      "required": true,
+      "description": "Cloudflare account ID",
+      "argTemplate": "--account-id={value}"
+    },
+    "zone_id": {
+      "type": "string",
+      "required": false,
+      "description": "Specific zone ID for DNS operations",
+      "argTemplate": "--zone-id={value}"
+    }
+  }
+}

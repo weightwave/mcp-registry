@@ -1,7 +1,0 @@
-{
-  "description": "MongoDB integration that enables LLMs to interact directly with databases",
-  "command": "npx",
-  "args": ["-y", "@quantgeekdev/mongo-mcp"],
-  "type": "stdio",
-  "parameters": {}
-}

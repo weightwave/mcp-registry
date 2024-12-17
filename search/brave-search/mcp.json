@@ -1,0 +1,34 @@
+{
+  "description": "Web search capabilities using Brave's Search API",
+  "command": "npx",
+  "args": ["-y", "@modelcontextprotocol/server-brave-search"],
+  "type": "stdio",
+  "parameters": {
+    "api_key": {
+      "type": "string",
+      "required": true,
+      "description": "Brave Search API key",
+      "argTemplate": "--api-key={value}"
+    },
+    "safe_search": {
+      "type": "string",
+      "required": false,
+      "default": "moderate",
+      "description": "Safe search level (strict, moderate, off)",
+      "argTemplate": "--safe-search={value}"
+    },
+    "result_count": {
+      "type": "integer",
+      "required": false,
+      "default": 10,
+      "description": "Number of search results to return",
+      "argTemplate": "--result-count={value}"
+    },
+    "country": {
+      "type": "string",
+      "required": false,
+      "description": "Country code for localized results (ISO 3166-1 alpha-2)",
+      "argTemplate": "--country={value}"
+    }
+  }
+}

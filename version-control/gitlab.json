@@ -1,7 +1,0 @@
-{
-  "description": "GitLab platform integration for project management and CI/CD operations",
-  "command": "npx",
-  "args": ["-y", "@modelcontextprotocol/server-gitlab"],
-  "type": "stdio",
-  "parameters": {}
-}

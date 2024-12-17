@@ -1,7 +1,0 @@
-{
-  "description": "An MCP server using Playwright for browser automation and webscrapping",
-  "command": "npx",
-  "args": ["-y", "@executeautomation/playwright-mcp-server"],
-  "type": "stdio",
-  "parameters": {}
-}

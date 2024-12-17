@@ -1,0 +1,41 @@
+{
+  "description": "GitLab platform integration for project management and CI/CD operations",
+  "command": "npx",
+  "args": ["-y", "@modelcontextprotocol/server-gitlab"],
+  "type": "stdio",
+  "parameters": {
+    "token": {
+      "type": "string",
+      "required": true,
+      "description": "GitLab personal access token",
+      "argTemplate": "--token={value}"
+    },
+    "api_url": {
+      "type": "string",
+      "required": false,
+      "default": "https://gitlab.com",
+      "description": "GitLab instance URL",
+      "argTemplate": "--api-url={value}"
+    },
+    "project_id": {
+      "type": "string",
+      "required": false,
+      "description": "Default GitLab project ID",
+      "argTemplate": "--project-id={value}"
+    },
+    "api_version": {
+      "type": "string",
+      "required": false,
+      "default": "v4",
+      "description": "GitLab API version",
+      "argTemplate": "--api-version={value}"
+    },
+    "timeout": {
+      "type": "integer",
+      "required": false,
+      "default": 10000,
+      "description": "API request timeout in milliseconds",
+      "argTemplate": "--timeout={value}"
+    }
+  }
+}

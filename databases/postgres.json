@@ -1,7 +1,0 @@
-{
-  "description": "PostgreSQL database integration with schema inspection and query capabilities",
-  "command": "npx",
-  "args": ["-y", "@modelcontextprotocol/server-postgres"],
-  "type": "stdio",
-  "parameters": {}
-}

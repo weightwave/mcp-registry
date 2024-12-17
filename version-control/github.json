@@ -1,7 +1,0 @@
-{
-  "description": "GitHub API integration for repository management, PRs, issues, and more",
-  "command": "npx",
-  "args": ["-y", "@modelcontextprotocol/server-github"],
-  "type": "stdio",
-  "parameters": {}
-}

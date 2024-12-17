@@ -1,0 +1,35 @@
+{
+  "description": "Query and interact with kubernetes environments monitored by Metoro",
+  "command": "npx",
+  "args": ["-y", "@metoro-io/metoro-mcp-server"],
+  "type": "stdio",
+  "parameters": {
+    "api_key": {
+      "type": "string",
+      "required": true,
+      "description": "Metoro API key for authentication",
+      "argTemplate": "--api-key={value}"
+    },
+    "endpoint": {
+      "type": "string",
+      "required": false,
+      "default": "https://api.metoro.io",
+      "description": "Metoro API endpoint URL",
+      "argTemplate": "--endpoint={value}"
+    },
+    "log_level": {
+      "type": "string",
+      "required": false,
+      "default": "info",
+      "description": "Logging level (debug, info, warn, error)",
+      "argTemplate": "--log-level={value}"
+    },
+    "metrics_interval": {
+      "type": "integer",
+      "required": false,
+      "default": 60,
+      "description": "Metrics collection interval in seconds",
+      "argTemplate": "--metrics-interval={value}"
+    }
+  }
+}

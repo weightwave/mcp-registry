@@ -1,7 +1,0 @@
-{
-  "description": "Integration with Cloudflare services including Workers, KV, R2, and D1",
-  "command": "npx",
-  "args": ["-y", "@cloudflare/mcp-server-cloudflare"],
-  "type": "stdio",
-  "parameters": {}
-}

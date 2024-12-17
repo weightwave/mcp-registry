@@ -1,0 +1,38 @@
+{
+  "description": "PostgreSQL database integration with schema inspection and query capabilities",
+  "command": "npx",
+  "args": ["-y", "@modelcontextprotocol/server-postgres"],
+  "type": "stdio",
+  "parameters": {
+    "host": {
+      "type": "string",
+      "required": true,
+      "description": "PostgreSQL server hostname",
+      "argTemplate": "--host={value}"
+    },
+    "port": {
+      "type": "integer",
+      "required": true,
+      "description": "PostgreSQL server port",
+      "argTemplate": "--port={value}"
+    },
+    "user": {
+      "type": "string",
+      "required": true,
+      "description": "PostgreSQL username",
+      "argTemplate": "--user={value}"
+    },
+    "password": {
+      "type": "string",
+      "required": true,
+      "description": "PostgreSQL password",
+      "argTemplate": "--password={value}"
+    },
+    "database": {
+      "type": "string",
+      "required": true,
+      "description": "PostgreSQL database name",
+      "argTemplate": "--database={value}"
+    }
+  }
+}

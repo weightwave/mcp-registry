@@ -1,7 +1,0 @@
-{
-  "description": "Kagi search API integration",
-  "command": "npx",
-  "args": ["-y", "@ac3xx/mcp-servers-kagi"],
-  "type": "stdio",
-  "parameters": {}
-}

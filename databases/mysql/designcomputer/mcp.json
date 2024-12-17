@@ -1,0 +1,32 @@
+{
+  "description": "MySQL database integration with configurable access controls, schema inspection, and comprehensive security guidelines",
+  "command": "uvx",
+  "args": ["mysql_mcp_server"],
+  "type": "stdio",
+  "parameters": {
+    "host": {
+      "type": "string",
+      "required": true,
+      "description": "MySQL server hostname",
+      "argTemplate": "--host={value}"
+    },
+    "port": {
+      "type": "integer",
+      "required": true,
+      "description": "MySQL server port",
+      "argTemplate": "--port={value}"
+    },
+    "user": {
+      "type": "string",
+      "required": true,
+      "description": "MySQL username",
+      "argTemplate": "--user={value}"
+    },
+    "password": {
+      "type": "string",
+      "required": true,
+      "description": "MySQL password",
+      "argTemplate": "--password={value}"
+    }
+  }
+}

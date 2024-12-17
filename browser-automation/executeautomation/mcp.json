@@ -1,0 +1,29 @@
+{
+  "description": "An MCP server using Playwright for browser automation and webscrapping",
+  "command": "npx",
+  "args": ["-y", "@executeautomation/playwright-mcp-server"],
+  "type": "stdio",
+  "parameters": {
+    "headless": {
+      "type": "boolean",
+      "required": false,
+      "default": true,
+      "description": "Run browser in headless mode",
+      "argTemplate": "--headless={value}"
+    },
+    "browser": {
+      "type": "string",
+      "required": false,
+      "default": "chromium",
+      "description": "Browser to use (chromium, firefox, webkit)",
+      "argTemplate": "--browser={value}"
+    },
+    "timeout": {
+      "type": "integer",
+      "required": false,
+      "default": 30000,
+      "description": "Timeout for browser operations in milliseconds",
+      "argTemplate": "--timeout={value}"
+    }
+  }
+}

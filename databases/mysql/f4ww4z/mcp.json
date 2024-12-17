@@ -1,0 +1,32 @@
+{
+  "description": "Node.js-based MySQL database integration that provides secure MySQL database operations",
+  "command": "uvx",
+  "args": ["mcp-mysql-server"],
+  "type": "stdio",
+  "parameters": {
+    "host": {
+      "type": "string",
+      "required": true,
+      "description": "MySQL server hostname",
+      "argTemplate": "--host={value}"
+    },
+    "port": {
+      "type": "integer",
+      "required": true,
+      "description": "MySQL server port",
+      "argTemplate": "--port={value}"
+    },
+    "user": {
+      "type": "string",
+      "required": true,
+      "description": "MySQL username",
+      "argTemplate": "--user={value}"
+    },
+    "password": {
+      "type": "string",
+      "required": true,
+      "description": "MySQL password",
+      "argTemplate": "--password={value}"
+    }
+  }
+}
