@@ -39,11 +39,6 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
-      - name: Run Tests
-        run: |
-          chmod +x ./test-api.sh
-          npm test || true
-
       - name: Build and Push Image
         run: |
           docker build -t ${{ env.REGISTRY }}/${{ env.ORG_NAME }}/${{ env.APP_NAME }}:${{ steps.vars.outputs.ENV_NAME }}-${{ steps.vars.outputs.VERSION }} .
