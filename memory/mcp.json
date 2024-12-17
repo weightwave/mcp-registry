@@ -1,0 +1,7 @@
+{
+  "description": "Memory management server for conversation history",
+  "command": "npx",
+  "args": ["-y", "@modelcontextprotocol/server-memory"],
+  "type": "stdio",
+  "parameters": {}
+}

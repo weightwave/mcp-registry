@@ -1,0 +1,7 @@
+{
+  "description": "HTTP request server for making external API calls",
+  "command": "uvx",
+  "args": ["mcp-server-fetch"],
+  "type": "stdio",
+  "parameters": {}
+}

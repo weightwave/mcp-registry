@@ -1,0 +1,7 @@
+{
+  "description": "Browser automation server using Puppeteer",
+  "command": "npx",
+  "args": ["-y", "@modelcontextprotocol/server-puppeteer"],
+  "type": "stdio",
+  "parameters": {}
+}
