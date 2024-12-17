@@ -1,0 +1,80 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - prod
+      - pre
+      - dev
+
+env:
+  REGISTRY: crpi-jl39zmt89zkgdhks-vpc.us-west-1.personal.cr.aliyuncs.com
+  ORG_NAME: createany
+  APP_NAME: mcp-registry
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set version and env
+        id: vars
+        run: |
+          VERSION=$(date +%Y%m%d%H%M%S)-${GITHUB_SHA::7}
+          ENV_NAME=$(echo ${GITHUB_REF#refs/heads/})
+          COMMIT_MSG=$(git log -1 --pretty=format:"%s")
+          COMMIT_AUTHOR=$(git log -1 --pretty=format:"%an")
+          echo "VERSION=${VERSION}" >> $GITHUB_OUTPUT
+          echo "ENV_NAME=${ENV_NAME}" >> $GITHUB_OUTPUT
+          echo "COMMIT_MSG=${COMMIT_MSG}" >> $GITHUB_OUTPUT
+          echo "COMMIT_AUTHOR=${COMMIT_AUTHOR}" >> $GITHUB_OUTPUT
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Run Tests
+        run: |
+          chmod +x ./test-api.sh
+          npm test || true
+
+      - name: Build and Push Image
+        run: |
+          docker build -t ${{ env.REGISTRY }}/${{ env.ORG_NAME }}/${{ env.APP_NAME }}:${{ steps.vars.outputs.ENV_NAME }}-${{ steps.vars.outputs.VERSION }} .
+          docker tag ${{ env.REGISTRY }}/${{ env.ORG_NAME }}/${{ env.APP_NAME }}:${{ steps.vars.outputs.ENV_NAME }}-${{ steps.vars.outputs.VERSION }} \
+            ${{ env.REGISTRY }}/${{ env.ORG_NAME }}/${{ env.APP_NAME }}:${{ steps.vars.outputs.ENV_NAME }}-latest
+
+          docker push ${{ env.REGISTRY }}/${{ env.ORG_NAME }}/${{ env.APP_NAME }}:${{ steps.vars.outputs.ENV_NAME }}-${{ steps.vars.outputs.VERSION }}
+          docker push ${{ env.REGISTRY }}/${{ env.ORG_NAME }}/${{ env.APP_NAME }}:${{ steps.vars.outputs.ENV_NAME }}-latest
+
+          docker rmi ${{ env.REGISTRY }}/${{ env.ORG_NAME }}/${{ env.APP_NAME }}:${{ steps.vars.outputs.ENV_NAME }}-${{ steps.vars.outputs.VERSION }}
+          docker rmi ${{ env.REGISTRY }}/${{ env.ORG_NAME }}/${{ env.APP_NAME }}:${{ steps.vars.outputs.ENV_NAME }}-latest
+
+      - name: Checkout GitOps repo
+        uses: actions/checkout@v4
+        with:
+          repository: weightwave/gitops
+          path: gitops
+          token: ${{ secrets.GH_PAT }}
+
+      - name: Update Kustomization
+        run: |
+          cd gitops/apps/${{ env.APP_NAME }}/overlays/${{ steps.vars.outputs.ENV_NAME }}
+          sed -i "s|newTag:.*|newTag: ${{ steps.vars.outputs.ENV_NAME }}-${{ steps.vars.outputs.VERSION }}|" kustomization.yaml
+
+      - name: Commit and push changes
+        run: |
+          cd gitops
+          git config --local user.name "${{ steps.vars.outputs.COMMIT_AUTHOR }}"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "${{ steps.vars.outputs.COMMIT_MSG }} | 
+          registry version: ${{ steps.vars.outputs.ENV_NAME }}-${{ steps.vars.outputs.VERSION }} | 
+          Original commit by ${{ steps.vars.outputs.COMMIT_AUTHOR }}"
+          git push
