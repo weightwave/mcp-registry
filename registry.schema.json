@@ -1,0 +1,99 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "MCP Registry Schema",
+  "description": "Schema for MCP server type registry",
+  "type": "object",
+  "patternProperties": {
+    "^[a-zA-Z0-9_-]+$": {
+      "type": "object",
+      "required": ["type", "description"],
+      "properties": {
+        "description": {
+          "type": "string",
+          "description": "Detailed description of what this server type does"
+        },
+        "command": {
+          "type": "string",
+          "description": "Base command to start the server, not needed for remote SSE servers"
+        },
+        "args": {
+          "type": "array",
+          "description": "Base arguments before parameters, only used with command",
+          "items": {
+            "type": "string"
+          }
+        },
+        "type": {
+          "type": "string",
+          "enum": ["sse", "stdio"],
+          "description": "Communication protocol type"
+        },
+        "endpoint": {
+          "type": "string",
+          "description": "Endpoint for SSE connection, required if type is sse"
+        },
+        "parameters": {
+          "type": "object",
+          "description": "Parameter definitions for this server type, only needed for local servers",
+          "patternProperties": {
+            "^[a-zA-Z0-9_-]+$": {
+              "type": "object",
+              "required": ["type", "required", "argTemplate", "description"],
+              "properties": {
+                "description": {
+                  "type": "string",
+                  "description": "Detailed description of what this parameter does"
+                },
+                "type": {
+                  "type": "string",
+                  "enum": ["string", "integer", "boolean", "array"],
+                  "description": "Parameter type"
+                },
+                "required": {
+                  "type": "boolean",
+                  "description": "Whether this parameter is required"
+                },
+                "default": {
+                  "description": "Default value if not specified"
+                },
+                "argTemplate": {
+                  "type": "string",
+                  "description": "Template for converting parameter to command line arg. Use {value} as placeholder"
+                }
+              }
+            }
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": { "type": { "const": "sse" } }
+          },
+          "then": {
+            "required": ["endpoint"]
+          }
+        },
+        {
+          "if": {
+            "properties": { "type": { "const": "stdio" } }
+          },
+          "then": {
+            "required": ["command", "parameters"]
+          }
+        },
+        {
+          "if": {
+            "allOf": [
+              { "properties": { "type": { "const": "sse" } } },
+              { "required": ["command"] }
+            ]
+          },
+          "then": {
+            "required": ["parameters"]
+          }
+        }
+      ]
+    }
+  }
+}
