@@ -20,23 +20,35 @@ def generate_markdown():
     
     # Add table of contents
     for server_name in sorted(registry.keys()):
-        markdown.append(f"- [{server_name.title()}](#{server_name})")
+        server_info = registry[server_name]
+        markdown.append(f"- [{server_info.get('title', server_name.title())}](#{server_name})")
     
     markdown.append("\n## Servers\n")
     
     # Add detailed server information
     for server_name in sorted(registry.keys()):
         server_info = registry[server_name]
+        command_info = server_info.get('commandInfo', {})
+        
+        details = {
+            "id": server_info['id'],
+            "title": server_info['title'],
+            "description": server_info['description'],
+            "version": server_info.get('version', 'latest'),
+            "type": server_info['type'],
+            "command": command_info.get('command', ''),
+            "args": command_info.get('args', [])
+        }
+        
+        if 'tags' in server_info:
+            details['tags'] = server_info['tags']
+            
         markdown.extend([
-            f"### {server_name.title()}",
+            f"### {server_info['title']}",
             f"\n{server_info['description']}\n",
             "**Details:**",
             "```json",
-            json.dumps({
-                "command": server_info['command'],
-                "args": server_info['args'],
-                "type": server_info['type']
-            }, indent=2),
+            json.dumps(details, indent=2),
             "```\n"
         ])
     

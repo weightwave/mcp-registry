@@ -4,76 +4,112 @@ A curated list of Model Context Protocol (MCP) servers and tools.
 
 ## Contents
 
-- [Fetch](#fetch)
-- [Memory](#memory)
-- [Puppeteer](#puppeteer)
-- [Sequential-Thinking](#sequential-thinking)
+- [Fetch Server](#fetch)
+- [Memory Server](#memory)
+- [Puppeteer Server](#puppeteer)
+- [Sequential Thinking Server](#sequential-thinking)
 
 ## Servers
 
-### Fetch
+### Fetch Server
 
 HTTP request server for making API calls
 
 **Details:**
 ```json
 {
+  "id": "fetch",
+  "title": "Fetch Server",
+  "description": "HTTP request server for making API calls",
+  "version": "latest",
+  "type": "stdio",
   "command": "uvx",
   "args": [
     "mcp-server-fetch"
   ],
-  "type": "stdio"
+  "tags": [
+    "http",
+    "api",
+    "networking"
+  ]
 }
 ```
 
-### Memory
+### Memory Server
 
 Memory management server for conversation history
 
 **Details:**
 ```json
 {
+  "id": "memory",
+  "title": "Memory Server",
+  "description": "Memory management server for conversation history",
+  "version": "latest",
+  "type": "stdio",
   "command": "npx",
   "args": [
     "-y",
     "@modelcontextprotocol/server-memory"
   ],
-  "type": "stdio"
+  "tags": [
+    "memory",
+    "conversation history",
+    "context management"
+  ]
 }
 ```
 
-### Puppeteer
+### Puppeteer Server
 
 Browser automation server using Puppeteer
 
 **Details:**
 ```json
 {
+  "id": "puppeteer",
+  "title": "Puppeteer Server",
+  "description": "Browser automation server using Puppeteer",
+  "version": "latest",
+  "type": "stdio",
   "command": "npx",
   "args": [
     "-y",
     "@modelcontextprotocol/server-puppeteer"
   ],
-  "type": "stdio"
+  "tags": [
+    "browser automation",
+    "web scraping",
+    "testing"
+  ]
 }
 ```
 
-### Sequential-Thinking
+### Sequential Thinking Server
 
 Sequential thinking server for step-by-step reasoning
 
 **Details:**
 ```json
 {
+  "id": "sequential-thinking",
+  "title": "Sequential Thinking Server",
+  "description": "Sequential thinking server for step-by-step reasoning",
+  "version": "latest",
+  "type": "stdio",
   "command": "npx",
   "args": [
     "-y",
     "@modelcontextprotocol/server-sequential-thinking"
   ],
-  "type": "stdio"
+  "tags": [
+    "reasoning",
+    "step-by-step",
+    "problem solving"
+  ]
 }
 ```
 
 ---
 
-Last updated: 2024-12-17 19:48:52
+Last updated: 2024-12-17 20:52:47
