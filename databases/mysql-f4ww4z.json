@@ -1,0 +1,7 @@
+{
+  "description": "Node.js-based MySQL database integration that provides secure MySQL database operations",
+  "command": "uvx",
+  "args": ["mcp-mysql-server"],
+  "type": "stdio",
+  "parameters": {}
+}

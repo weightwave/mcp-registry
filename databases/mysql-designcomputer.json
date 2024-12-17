@@ -1,0 +1,7 @@
+{
+  "description": "MySQL database integration with configurable access controls, schema inspection, and comprehensive security guidelines",
+  "command": "uvx",
+  "args": ["mysql_mcp_server"],
+  "type": "stdio",
+  "parameters": {}
+}

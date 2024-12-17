@@ -1,0 +1,7 @@
+{
+  "description": "An MCP server for browser automation using Playwright",
+  "command": "npx",
+  "args": ["-y", "@automatalabs/mcp-server-playwright"],
+  "type": "stdio",
+  "parameters": {}
+}

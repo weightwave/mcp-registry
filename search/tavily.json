@@ -1,0 +1,7 @@
+{
+  "description": "Tavily AI search API",
+  "command": "uvx",
+  "args": ["mcp-server-tavily"],
+  "type": "stdio",
+  "parameters": {}
+}

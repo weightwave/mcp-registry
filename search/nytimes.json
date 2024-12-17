@@ -1,0 +1,7 @@
+{
+  "description": "Search articles using the NYTimes API",
+  "command": "npx",
+  "args": ["-y", "@angheljf/nyt"],
+  "type": "stdio",
+  "parameters": {}
+}
