@@ -13,7 +13,7 @@ A curated list of Model Context Protocol (MCP) servers and tools.
 
 ### Fetch
 
-HTTP request server for making external API calls
+HTTP request server for making API calls
 
 **Details:**
 ```json
@@ -76,4 +76,4 @@ Sequential thinking server for step-by-step reasoning
 
 ---
 
-Last updated: 2024-12-17 18:23:24
+Last updated: 2024-12-17 18:27:44
