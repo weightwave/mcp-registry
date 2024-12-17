@@ -1,5 +1,7 @@
 {
-  "description": "Browser automation server using Puppeteer",
+  "name": "Puppeteer",
+  "homepage": "https://github.com/modelcontextprotocol/servers/tree/main/src/puppeteer",
+  "description": "Browser automation and web scraping",
   "command": "npx",
   "args": ["-y", "@modelcontextprotocol/server-puppeteer"],
   "type": "stdio",
