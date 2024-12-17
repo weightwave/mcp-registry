@@ -1,0 +1,17 @@
+{
+  "description": "MCP server for using the GitHub API",
+  "command": "npx",
+  "args": [
+    "-y",
+    "@modelcontextprotocol/server-github"
+  ],
+  "type": "stdio",
+  "parameters": {
+    "github_token": {
+      "type": "string",
+      "required": true,
+      "description": "GitHub API token for authentication",
+      "argTemplate": "--token={value}"
+    }
+  }
+}

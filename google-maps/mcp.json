@@ -1,0 +1,17 @@
+{
+  "description": "MCP server for using the Google Maps API",
+  "command": "npx",
+  "args": [
+    "-y",
+    "@modelcontextprotocol/server-google-maps"
+  ],
+  "type": "stdio",
+  "parameters": {
+    "api-key": {
+      "type": "string",
+      "required": true,
+      "description": "Google Maps API key for authentication",
+      "argTemplate": "--api-key={value}"
+    }
+  }
+}

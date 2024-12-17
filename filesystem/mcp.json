@@ -1,0 +1,14 @@
+{
+  "description": "Node.js server implementing Model Context Protocol (MCP) for filesystem operations",
+  "command": "npx",
+  "args": ["-y", "@modelcontextprotocol/server-filesystem"],
+  "type": "stdio",
+  "parameters": {
+    "allowed_directories": {
+      "type": "array",
+      "required": true,
+      "description": "List of directories that the server is allowed to access",
+      "argTemplate": "{value}"
+    }
+  }
+}
