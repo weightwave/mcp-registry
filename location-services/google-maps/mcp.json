@@ -1,0 +1,35 @@
+{
+  "description": "Google Maps integration for location services, routing, and place details",
+  "command": "npx",
+  "args": ["-y", "@modelcontextprotocol/server-google-maps"],
+  "type": "stdio",
+  "parameters": {
+    "api_key": {
+      "type": "string",
+      "required": true,
+      "description": "Google Maps API key",
+      "argTemplate": "--api-key={value}"
+    },
+    "region": {
+      "type": "string",
+      "required": false,
+      "default": "US",
+      "description": "Default region code (ISO 3166-1 alpha-2)",
+      "argTemplate": "--region={value}"
+    },
+    "language": {
+      "type": "string",
+      "required": false,
+      "default": "en",
+      "description": "Default language code (ISO 639-1)",
+      "argTemplate": "--language={value}"
+    },
+    "cache_enabled": {
+      "type": "boolean",
+      "required": false,
+      "default": true,
+      "description": "Enable caching of geocoding results",
+      "argTemplate": "--cache={value}"
+    }
+  }
+}

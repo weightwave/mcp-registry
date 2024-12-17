@@ -1,0 +1,22 @@
+{
+  "description": "An MCP server for browser automation using Playwright",
+  "command": "npx",
+  "args": ["-y", "@automatalabs/mcp-server-playwright"],
+  "type": "stdio",
+  "parameters": {
+    "headless": {
+      "type": "boolean",
+      "required": false,
+      "default": true,
+      "description": "Run browser in headless mode",
+      "argTemplate": "--headless={value}"
+    },
+    "browser": {
+      "type": "string",
+      "required": false,
+      "default": "chromium",
+      "description": "Browser to use (chromium, firefox, webkit)",
+      "argTemplate": "--browser={value}"
+    }
+  }
+}

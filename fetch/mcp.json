@@ -3,5 +3,33 @@
   "command": "uvx",
   "args": ["mcp-server-fetch"],
   "type": "stdio",
-  "parameters": {}
+  "parameters": {
+    "timeout": {
+      "type": "integer",
+      "required": false,
+      "default": 30000,
+      "description": "Request timeout in milliseconds",
+      "argTemplate": "--timeout={value}"
+    },
+    "max_retries": {
+      "type": "integer",
+      "required": false,
+      "default": 3,
+      "description": "Maximum number of retry attempts for failed requests",
+      "argTemplate": "--max-retries={value}"
+    },
+    "retry_delay": {
+      "type": "integer",
+      "required": false,
+      "default": 1000,
+      "description": "Delay between retry attempts in milliseconds",
+      "argTemplate": "--retry-delay={value}"
+    },
+    "default_headers": {
+      "type": "string",
+      "required": false,
+      "description": "JSON string of default headers to include in all requests",
+      "argTemplate": "--default-headers={value}"
+    }
+  }
 }

@@ -1,0 +1,34 @@
+{
+  "description": "Kagi search API integration",
+  "command": "npx",
+  "args": ["-y", "@ac3xx/mcp-servers-kagi"],
+  "type": "stdio",
+  "parameters": {
+    "api_key": {
+      "type": "string",
+      "required": true,
+      "description": "Kagi API key for authentication",
+      "argTemplate": "--api-key={value}"
+    },
+    "result_count": {
+      "type": "integer",
+      "required": false,
+      "default": 10,
+      "description": "Number of search results to return",
+      "argTemplate": "--result-count={value}"
+    },
+    "language": {
+      "type": "string",
+      "required": false,
+      "description": "Language code for results (ISO 639-1)",
+      "argTemplate": "--language={value}"
+    },
+    "safe_search": {
+      "type": "boolean",
+      "required": false,
+      "default": true,
+      "description": "Enable safe search filtering",
+      "argTemplate": "--safe-search={value}"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "description": "GitHub API integration for repository management, PRs, issues, and more",
+  "command": "npx",
+  "args": ["-y", "@modelcontextprotocol/server-github"],
+  "type": "stdio",
+  "parameters": {
+    "token": {
+      "type": "string",
+      "required": true,
+      "description": "GitHub personal access token",
+      "argTemplate": "--token={value}"
+    },
+    "api_url": {
+      "type": "string",
+      "required": false,
+      "default": "https://api.github.com",
+      "description": "GitHub API endpoint URL (for enterprise instances)",
+      "argTemplate": "--api-url={value}"
+    },
+    "owner": {
+      "type": "string",
+      "required": false,
+      "description": "Default repository owner/organization",
+      "argTemplate": "--owner={value}"
+    },
+    "repo": {
+      "type": "string",
+      "required": false,
+      "description": "Default repository name",
+      "argTemplate": "--repo={value}"
+    },
+    "timeout": {
+      "type": "integer",
+      "required": false,
+      "default": 10000,
+      "description": "API request timeout in milliseconds",
+      "argTemplate": "--timeout={value}"
+    }
+  }
+}

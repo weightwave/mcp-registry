@@ -3,5 +3,40 @@
   "command": "npx",
   "args": ["-y", "@modelcontextprotocol/server-puppeteer"],
   "type": "stdio",
-  "parameters": {}
+  "parameters": {
+    "headless": {
+      "type": "boolean",
+      "required": false,
+      "default": true,
+      "description": "Run browser in headless mode",
+      "argTemplate": "--headless={value}"
+    },
+    "viewport_width": {
+      "type": "integer",
+      "required": false,
+      "default": 1920,
+      "description": "Browser viewport width in pixels",
+      "argTemplate": "--viewport-width={value}"
+    },
+    "viewport_height": {
+      "type": "integer",
+      "required": false,
+      "default": 1080,
+      "description": "Browser viewport height in pixels",
+      "argTemplate": "--viewport-height={value}"
+    },
+    "user_agent": {
+      "type": "string",
+      "required": false,
+      "description": "Custom user agent string",
+      "argTemplate": "--user-agent={value}"
+    },
+    "timeout": {
+      "type": "integer",
+      "required": false,
+      "default": 30000,
+      "description": "Default timeout in milliseconds",
+      "argTemplate": "--timeout={value}"
+    }
+  }
 }

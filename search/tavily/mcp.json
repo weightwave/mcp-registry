@@ -1,0 +1,40 @@
+{
+  "description": "Tavily AI search API",
+  "command": "uvx",
+  "args": ["mcp-server-tavily"],
+  "type": "stdio",
+  "parameters": {
+    "api_key": {
+      "type": "string",
+      "required": true,
+      "description": "Tavily API key for authentication",
+      "argTemplate": "--api-key={value}"
+    },
+    "result_count": {
+      "type": "integer",
+      "required": false,
+      "default": 5,
+      "description": "Number of search results to return",
+      "argTemplate": "--result-count={value}"
+    },
+    "search_depth": {
+      "type": "string",
+      "required": false,
+      "default": "basic",
+      "description": "Search depth level (basic, advanced)",
+      "argTemplate": "--search-depth={value}"
+    },
+    "include_domains": {
+      "type": "string",
+      "required": false,
+      "description": "Comma-separated list of domains to include",
+      "argTemplate": "--include-domains={value}"
+    },
+    "exclude_domains": {
+      "type": "string",
+      "required": false,
+      "description": "Comma-separated list of domains to exclude",
+      "argTemplate": "--exclude-domains={value}"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "description": "JetBrains IDE integration for code analysis and development tasks",
+  "command": "npx",
+  "args": ["-y", "@modelcontextprotocol/server-jetbrains"],
+  "type": "stdio",
+  "parameters": {
+    "install_path": {
+      "type": "string",
+      "required": true,
+      "description": "Path to JetBrains IDE installation directory",
+      "argTemplate": "--install-path={value}"
+    },
+    "license_key": {
+      "type": "string",
+      "required": true,
+      "description": "JetBrains license key for activation",
+      "argTemplate": "--license-key={value}"
+    },
+    "ide_type": {
+      "type": "string",
+      "required": true,
+      "description": "JetBrains IDE type (intellij, pycharm, webstorm, etc.)",
+      "argTemplate": "--ide-type={value}"
+    },
+    "config_path": {
+      "type": "string",
+      "required": false,
+      "description": "Path to custom IDE configuration directory",
+      "argTemplate": "--config-path={value}"
+    }
+  }
+}

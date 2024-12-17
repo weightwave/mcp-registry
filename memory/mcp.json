@@ -3,5 +3,33 @@
   "command": "npx",
   "args": ["-y", "@modelcontextprotocol/server-memory"],
   "type": "stdio",
-  "parameters": {}
+  "parameters": {
+    "storage_path": {
+      "type": "string",
+      "required": true,
+      "description": "Path to store conversation history",
+      "argTemplate": "--storage-path={value}"
+    },
+    "max_size": {
+      "type": "integer",
+      "required": false,
+      "default": 1000000,
+      "description": "Maximum size of memory storage in bytes",
+      "argTemplate": "--max-size={value}"
+    },
+    "retention_period": {
+      "type": "integer",
+      "required": false,
+      "default": 2592000,
+      "description": "Time to keep conversations in seconds (default 30 days)",
+      "argTemplate": "--retention={value}"
+    },
+    "compression": {
+      "type": "boolean",
+      "required": false,
+      "default": true,
+      "description": "Enable compression for stored conversations",
+      "argTemplate": "--compression={value}"
+    }
+  }
 }

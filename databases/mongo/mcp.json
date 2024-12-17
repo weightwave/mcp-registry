@@ -1,0 +1,45 @@
+{
+  "description": "MongoDB integration that enables LLMs to interact directly with databases",
+  "command": "npx",
+  "args": ["-y", "@quantgeekdev/mongo-mcp"],
+  "type": "stdio",
+  "parameters": {
+    "host": {
+      "type": "string",
+      "required": true,
+      "description": "MongoDB server hostname",
+      "argTemplate": "--host={value}"
+    },
+    "port": {
+      "type": "integer",
+      "required": true,
+      "description": "MongoDB server port",
+      "argTemplate": "--port={value}"
+    },
+    "user": {
+      "type": "string",
+      "required": true,
+      "description": "MongoDB username",
+      "argTemplate": "--user={value}"
+    },
+    "password": {
+      "type": "string",
+      "required": true,
+      "description": "MongoDB password",
+      "argTemplate": "--password={value}"
+    },
+    "database": {
+      "type": "string",
+      "required": true,
+      "description": "MongoDB database name",
+      "argTemplate": "--database={value}"
+    },
+    "auth_mechanism": {
+      "type": "string",
+      "required": false,
+      "default": "SCRAM-SHA-256",
+      "description": "MongoDB authentication mechanism",
+      "argTemplate": "--auth-mechanism={value}"
+    }
+  }
+}

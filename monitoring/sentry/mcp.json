@@ -1,0 +1,41 @@
+{
+  "description": "Sentry.io integration for error tracking and performance monitoring",
+  "command": "npx",
+  "args": ["-y", "@modelcontextprotocol/server-sentry"],
+  "type": "stdio",
+  "parameters": {
+    "dsn": {
+      "type": "string",
+      "required": true,
+      "description": "Sentry project Data Source Name (DSN)",
+      "argTemplate": "--dsn={value}"
+    },
+    "environment": {
+      "type": "string",
+      "required": false,
+      "default": "production",
+      "description": "Environment name (development, staging, production)",
+      "argTemplate": "--environment={value}"
+    },
+    "release": {
+      "type": "string",
+      "required": false,
+      "description": "Release version for error tracking",
+      "argTemplate": "--release={value}"
+    },
+    "sample_rate": {
+      "type": "string",
+      "required": false,
+      "default": "1.0",
+      "description": "Error sampling rate (0.0 to 1.0)",
+      "argTemplate": "--sample-rate={value}"
+    },
+    "traces_sample_rate": {
+      "type": "string",
+      "required": false,
+      "default": "0.1",
+      "description": "Performance tracing sample rate (0.0 to 1.0)",
+      "argTemplate": "--traces-sample-rate={value}"
+    }
+  }
+}

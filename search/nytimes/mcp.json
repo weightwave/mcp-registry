@@ -1,0 +1,40 @@
+{
+  "description": "Search articles using the NYTimes API",
+  "command": "npx",
+  "args": ["-y", "@angheljf/nyt"],
+  "type": "stdio",
+  "parameters": {
+    "api_key": {
+      "type": "string",
+      "required": true,
+      "description": "NYTimes API key for authentication",
+      "argTemplate": "--api-key={value}"
+    },
+    "result_count": {
+      "type": "integer",
+      "required": false,
+      "default": 10,
+      "description": "Number of articles to return",
+      "argTemplate": "--result-count={value}"
+    },
+    "sort": {
+      "type": "string",
+      "required": false,
+      "default": "newest",
+      "description": "Sort order (newest, oldest, relevance)",
+      "argTemplate": "--sort={value}"
+    },
+    "begin_date": {
+      "type": "string",
+      "required": false,
+      "description": "Start date for article search (YYYYMMDD format)",
+      "argTemplate": "--begin-date={value}"
+    },
+    "end_date": {
+      "type": "string",
+      "required": false,
+      "description": "End date for article search (YYYYMMDD format)",
+      "argTemplate": "--end-date={value}"
+    }
+  }
+}

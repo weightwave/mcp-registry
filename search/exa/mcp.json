@@ -1,0 +1,33 @@
+{
+  "description": "A Model Context Protocol (MCP) server lets AI assistants like Claude use the Exa AI Search API for web searches",
+  "command": "npx",
+  "args": ["-y", "@exa-labs/exa-mcp-server"],
+  "type": "stdio",
+  "parameters": {
+    "api_key": {
+      "type": "string",
+      "required": true,
+      "description": "Exa API key for authentication",
+      "argTemplate": "--api-key={value}"
+    },
+    "result_count": {
+      "type": "integer",
+      "required": false,
+      "default": 10,
+      "description": "Number of search results to return",
+      "argTemplate": "--result-count={value}"
+    },
+    "language": {
+      "type": "string",
+      "required": false,
+      "description": "Programming language to filter results",
+      "argTemplate": "--language={value}"
+    },
+    "repository": {
+      "type": "string",
+      "required": false,
+      "description": "Repository to search within (owner/repo format)",
+      "argTemplate": "--repository={value}"
+    }
+  }
+}

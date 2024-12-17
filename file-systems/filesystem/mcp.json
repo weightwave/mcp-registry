@@ -1,0 +1,35 @@
+{
+  "description": "Direct local file system access",
+  "command": "npx",
+  "args": ["-y", "@modelcontextprotocol/server-filesystem"],
+  "type": "stdio",
+  "parameters": {
+    "root_directory": {
+      "type": "string",
+      "required": true,
+      "description": "Root directory path for file operations",
+      "argTemplate": "--root={value}"
+    },
+    "permissions": {
+      "type": "string",
+      "required": false,
+      "default": "read",
+      "description": "Access permissions (read, write, readwrite)",
+      "argTemplate": "--permissions={value}"
+    },
+    "watch_changes": {
+      "type": "boolean",
+      "required": false,
+      "default": false,
+      "description": "Watch for file system changes",
+      "argTemplate": "--watch={value}"
+    },
+    "recursive": {
+      "type": "boolean",
+      "required": false,
+      "default": true,
+      "description": "Enable recursive directory operations",
+      "argTemplate": "--recursive={value}"
+    }
+  }
+}
