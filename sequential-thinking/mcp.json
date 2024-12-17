@@ -12,9 +12,9 @@
       "argTemplate": "--model={value}"
     },
     "temperature": {
-      "type": "number",
+      "type": "string",
       "required": false,
-      "default": 0.7,
+      "default": "0.7",
       "description": "Sampling temperature for model outputs (0.0 to 1.0)",
       "argTemplate": "--temperature={value}"
     },

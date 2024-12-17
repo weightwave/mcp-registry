@@ -24,16 +24,16 @@
       "argTemplate": "--release={value}"
     },
     "sample_rate": {
-      "type": "number",
+      "type": "string",
       "required": false,
-      "default": 1.0,
+      "default": "1.0",
       "description": "Error sampling rate (0.0 to 1.0)",
       "argTemplate": "--sample-rate={value}"
     },
     "traces_sample_rate": {
-      "type": "number",
+      "type": "string",
       "required": false,
-      "default": 0.1,
+      "default": "0.1",
       "description": "Performance tracing sample rate (0.0 to 1.0)",
       "argTemplate": "--traces-sample-rate={value}"
     }
