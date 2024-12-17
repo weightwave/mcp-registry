@@ -1,5 +1,7 @@
 {
-  "description": "Memory management server for conversation history",
+  "name": "Memory",
+  "homepage": "https://github.com/modelcontextprotocol/servers/tree/main/src/memory",
+  "description": "Knowledge graph-based persistent memory system",
   "command": "npx",
   "args": ["-y", "@modelcontextprotocol/server-memory"],
   "type": "stdio",

@@ -28,7 +28,7 @@ HTTP request server for making external API calls
 
 ### Memory
 
-Memory management server for conversation history
+Knowledge graph-based persistent memory system
 
 **Details:**
 ```json
@@ -44,7 +44,7 @@ Memory management server for conversation history
 
 ### Puppeteer
 
-Browser automation server using Puppeteer
+Browser automation and web scraping
 
 **Details:**
 ```json
@@ -76,4 +76,4 @@ Sequential thinking server for step-by-step reasoning
 
 ---
 
-Last updated: 2024-12-17 18:23:24
+Last updated: 2024-12-17 12:44:23

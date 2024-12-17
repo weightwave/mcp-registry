@@ -6,8 +6,16 @@
   "patternProperties": {
     "^[a-zA-Z0-9_-]+$": {
       "type": "object",
-      "required": ["type", "description"],
+      "required": ["type", "description", "name", "homepage"],
       "properties": {
+        "name": {
+          "type": "string",
+          "description": "Name of the MCP server"
+        },
+        "homepage": {
+          "type": "string",
+          "description": "Homepage URL of the server, typically the GitHub repository or documentation"
+        },
         "description": {
           "type": "string",
           "description": "Detailed description of what this server type does"
