@@ -51,6 +51,24 @@ async function loadRegistry() {
     }
 }
 
+// 添加分页辅助函数
+function paginateResults(array, page = 1, limit = 10) {
+    const startIndex = (page - 1) * limit;
+    const endIndex = startIndex + limit;
+    
+    const paginatedData = {
+        data: array.slice(startIndex, endIndex),
+        pagination: {
+            total: array.length,
+            currentPage: page,
+            totalPages: Math.ceil(array.length / limit),
+            limit: limit
+        }
+    };
+    
+    return paginatedData;
+}
+
 // Welcome endpoint
 app.get('/', (req, res) => {
     res.json({ message: 'Welcome to MCP Registry API' });
@@ -59,10 +77,14 @@ app.get('/', (req, res) => {
 // Get entire registry
 app.get('/registry', async (req, res) => {
     try {
+        const page = parseInt(req.query.page) || 1;
+        const limit = parseInt(req.query.limit) || 10;
+        
         const registry = await loadRegistry();
-        res.json(registry);
+        const paginatedRegistry = paginateResults(registry, page, limit);
+        res.json(paginatedRegistry);
     } catch (err) {
-        res.status(500).json({ error: 'Failed to load registry' });
+        res.status(500).json({ error: '加载注册表失败' });
     }
 });
 
@@ -70,8 +92,11 @@ app.get('/registry', async (req, res) => {
 app.get('/search', async (req, res) => {
     try {
         const { q } = req.query;
+        const page = parseInt(req.query.page) || 1;
+        const limit = parseInt(req.query.limit) || 10;
+
         if (!q) {
-            return res.status(400).json({ error: 'Search query is required' });
+            return res.status(400).json({ error: '需要搜索关键词' });
         }
 
         const registry = await loadRegistry();
@@ -86,9 +111,10 @@ app.get('/search', async (req, res) => {
             );
         });
 
-        res.json(results);
+        const paginatedResults = paginateResults(results, page, limit);
+        res.json(paginatedResults);
     } catch (err) {
-        res.status(500).json({ error: 'Search failed' });
+        res.status(500).json({ error: '搜索失败' });
     }
 });
 
