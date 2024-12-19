@@ -4,20 +4,25 @@ A curated list of Model Context Protocol (MCP) servers and tools.
 
 ## Contents
 
-- [Airtable Server](#airtable)
-- [Axiom Server](#axiom)
-- [Brave Search Server](#brave-search)
-- [Cloudflare Server](#cloudflare)
+- [Airtable](#airtable)
+- [AWS KB Retrieval](#aws-kb-retrieval)
+- [Axiom](#axiom)
+- [Brave Search](#brave-search)
+- [Cloudflare](#cloudflare)
+- [EverArt](#everart)
 - [Fetch Server](#fetch)
-- [Filesystem Server](#filesystem)
-- [GitHub Server](#github)
-- [Google Drive Server](#google-drive)
-- [Google Maps Server](#google-maps)
-- [Home Assistant Server](#home-assistant)
+- [Filesystem](#filesystem)
+- [Google Drive](#gdrive)
+- [Git](#git)
+- [GitHub](#github)
+- [Google Maps](#google-maps)
+- [Home Assistant](#home-assistant)
+- [Kubernetes](#kubernetes)
+- [Pandoc](#mcp-pandoc)
 - [Memory Server](#memory)
-- [MongoDB Server](#mongodb)
-- [Playwright Server](#playwright)
-- [PostgreSQL Server](#postgresql)
+- [MongoDB](#mongodb)
+- [Playwright](#playwright)
+- [PostgreSQL](#postgres)
 - [Puppeteer Server](#puppeteer)
 - [Sequential Thinking Server](#sequential-thinking)
 - [Slack](#slack)
@@ -29,55 +34,151 @@ A curated list of Model Context Protocol (MCP) servers and tools.
 
 ## Servers
 
-### Airtable Server
+### Airtable
 
-MCP server for managing Airtable bases and tables with comprehensive API support
-
-**Details:**
-```json
-{
-    "command": "npx",
-    "args": ["-y", "@modelcontextprotocol/server-airtable"],
-    "type": "stdio"
-}
-```
-
-### Axiom Server
-
-MCP server for querying data using Axiom Processing Language (APL)
+MCP server for managing Airtable bases and tables with comprehensive API support for base, table, field, and record operations
 
 **Details:**
 ```json
 {
-    "command": "axiom-mcp",
-    "args": ["--config", "config.txt"],
-    "type": "stdio"
+  "id": "airtable",
+  "title": "Airtable",
+  "description": "MCP server for managing Airtable bases and tables with comprehensive API support for base, table, field, and record operations",
+  "version": "latest",
+  "type": "stdio",
+  "command": "node",
+  "args": [
+    "build/index.js"
+  ],
+  "tags": [
+    "database",
+    "api",
+    "tables",
+    "records",
+    "fields"
+  ]
 }
 ```
 
-### Brave Search Server
+### AWS KB Retrieval
+
+Retrieval from AWS Knowledge Base using Bedrock Agent Runtime
+
+**Details:**
+```json
+{
+  "id": "aws-kb-retrieval",
+  "title": "AWS KB Retrieval",
+  "description": "Retrieval from AWS Knowledge Base using Bedrock Agent Runtime",
+  "version": "latest",
+  "type": "N/A",
+  "command": "npx",
+  "args": [
+    "-y",
+    "@modelcontextprotocol/server-aws-kb-retrieval"
+  ],
+  "tags": [
+    "knowledge base"
+  ]
+}
+```
+
+### Axiom
+
+MCP server for querying data using Axiom Processing Language (APL) with support for dataset operations and APL queries
+
+**Details:**
+```json
+{
+  "id": "axiom",
+  "title": "Axiom",
+  "description": "MCP server for querying data using Axiom Processing Language (APL) with support for dataset operations and APL queries",
+  "version": "latest",
+  "type": "stdio",
+  "command": "axiom-mcp",
+  "args": [
+    "--config",
+    "config.txt"
+  ],
+  "tags": [
+    "database",
+    "query",
+    "apl",
+    "datasets"
+  ]
+}
+```
+
+### Brave Search
 
 MCP server for Brave Search API integration
 
 **Details:**
 ```json
 {
-    "command": "npx",
-    "args": ["-y", "@modelcontextprotocol/server-brave-search"],
-    "type": "stdio"
+  "id": "brave-search",
+  "title": "Brave Search",
+  "description": "MCP server for Brave Search API integration",
+  "version": "latest",
+  "type": "stdio",
+  "command": "npx",
+  "args": [
+    "-y",
+    "@modelcontextprotocol/server-brave-search"
+  ],
+  "tags": [
+    "search",
+    "api"
+  ]
 }
 ```
 
-### Cloudflare Server
+### Cloudflare
 
 MCP server for Cloudflare API integration with support for DNS, Workers, and security services
 
 **Details:**
 ```json
 {
-    "command": "npx",
-    "args": ["-y", "@cloudflare/mcp-server-cloudflare"],
-    "type": "stdio"
+  "id": "cloudflare",
+  "title": "Cloudflare",
+  "description": "MCP server for Cloudflare API integration with support for DNS, Workers, and security services",
+  "version": "latest",
+  "type": "stdio",
+  "command": "npx",
+  "args": [
+    "-y",
+    "@cloudflare/mcp-server-cloudflare"
+  ],
+  "tags": [
+    "cdn",
+    "dns",
+    "security",
+    "workers"
+  ]
+}
+```
+
+### EverArt
+
+AI image generation using various models
+
+**Details:**
+```json
+{
+  "id": "everart",
+  "title": "EverArt",
+  "description": "AI image generation using various models",
+  "version": "latest",
+  "type": "N/A",
+  "command": "npx",
+  "args": [
+    "-y",
+    "@modelcontextprotocol/server-everart"
+  ],
+  "tags": [
+    "image generation"
+  ]
 }
 ```
 
@@ -88,97 +189,69 @@ HTTP request server for making API calls
 **Details:**
 ```json
 {
-    "command": "uvx",
-    "args": ["mcp-server-fetch"],
-    "type": "stdio"
+  "id": "fetch",
+  "title": "Fetch Server",
+  "description": "HTTP request server for making API calls",
+  "version": "latest",
+  "type": "stdio",
+  "command": "uvx",
+  "args": [
+    "mcp-server-fetch"
+  ],
+  "tags": [
+    "http",
+    "api",
+    "networking"
+  ]
 }
 ```
 
-### Filesystem Server
+### Filesystem
 
 Node.js server implementing Model Context Protocol (MCP) for filesystem operations
 
 **Details:**
 ```json
 {
-    "command": "npx",
-    "args": ["-y", "@modelcontextprotocol/server-filesystem"],
-    "type": "stdio"
-}
-```
-
-### GitHub Server
-
-MCP server for using the GitHub API
-
-**Details:**
-```json
-{
-    "command": "npx",
-    "args": ["-y", "@modelcontextprotocol/server-github"],
-    "type": "stdio"
-}
-```
-
-### Google Drive Server
-
-MCP server for Google Drive integration with file management and sharing capabilities
-
-**Details:**
-```json
-{
-    "command": "npx",
-    "args": ["-y", "@modelcontextprotocol/server-gdrive"],
-    "type": "stdio"
-}
-```
-
-### Google Maps Server
-
-MCP server for using the Google Maps API
-
-**Details:**
-```json
-{
-    "command": "npx",
-    "args": ["-y", "@modelcontextprotocol/server-google-maps"],
-    "type": "stdio"
-}
-```
-
-### Home Assistant Server
-
-MCP server for Home Assistant home automation platform integration
-
-**Details:**
-```json
-{
-    "command": "python",
-    "args": ["-m", "mcp_server_home_assistant"],
-    "type": "stdio"
-}
-```
-
-### Filesystem
-
-Secure file operations with configurable access controls
-
-**Details:**
-```json
-{
   "id": "filesystem",
   "title": "Filesystem",
-  "description": "Secure file operations with configurable access controls",
+  "description": "Node.js server implementing Model Context Protocol (MCP) for filesystem operations",
   "version": "latest",
-  "type": "N/A",
+  "type": "stdio",
   "command": "npx",
   "args": [
     "-y",
-    "@modelcontextprotocol/server-filesystem",
-    "$ALLOWED_DIRS|path$"
+    "@modelcontextprotocol/server-filesystem"
   ],
   "tags": [
-    "file operation"
+    "file operation",
+    "filesystem"
+  ]
+}
+```
+
+### Google Drive
+
+MCP server for Google Drive integration, providing file management and sharing capabilities
+
+**Details:**
+```json
+{
+  "id": "gdrive",
+  "title": "Google Drive",
+  "description": "MCP server for Google Drive integration, providing file management and sharing capabilities",
+  "version": "latest",
+  "type": "stdio",
+  "command": "npx",
+  "args": [
+    "-y",
+    "@modelcontextprotocol/server-gdrive"
+  ],
+  "tags": [
+    "storage",
+    "files",
+    "google",
+    "cloud"
   ]
 }
 ```
@@ -207,18 +280,18 @@ Tools to read, search, and manipulate Git repositories
 }
 ```
 
-### Github
+### GitHub
 
-Repository management, file operations, and GitHub API integration
+MCP server for using the GitHub API
 
 **Details:**
 ```json
 {
   "id": "github",
-  "title": "Github",
-  "description": "Repository management, file operations, and GitHub API integration",
+  "title": "GitHub",
+  "description": "MCP server for using the GitHub API",
   "version": "latest",
-  "type": "N/A",
+  "type": "stdio",
   "command": "npx",
   "args": [
     "-y",
@@ -226,30 +299,59 @@ Repository management, file operations, and GitHub API integration
   ],
   "tags": [
     "git",
-    "github"
+    "github",
+    "api"
   ]
 }
 ```
 
 ### Google Maps
 
-Location services, directions, and place details
+MCP server for using the Google Maps API
 
 **Details:**
 ```json
 {
   "id": "google-maps",
   "title": "Google Maps",
-  "description": "Location services, directions, and place details",
+  "description": "MCP server for using the Google Maps API",
   "version": "latest",
-  "type": "N/A",
+  "type": "stdio",
   "command": "npx",
   "args": [
     "-y",
     "@modelcontextprotocol/server-google-maps"
   ],
   "tags": [
-    "location"
+    "maps",
+    "location",
+    "api"
+  ]
+}
+```
+
+### Home Assistant
+
+MCP server for interacting with Home Assistant home automation platform, providing control over smart home devices and automation
+
+**Details:**
+```json
+{
+  "id": "home-assistant",
+  "title": "Home Assistant",
+  "description": "MCP server for interacting with Home Assistant home automation platform, providing control over smart home devices and automation",
+  "version": "latest",
+  "type": "stdio",
+  "command": "python",
+  "args": [
+    "-m",
+    "mcp_server_home_assistant"
+  ],
+  "tags": [
+    "home-automation",
+    "iot",
+    "smart-home",
+    "automation"
   ]
 }
 ```
@@ -305,48 +407,99 @@ Memory management server for conversation history
 **Details:**
 ```json
 {
-    "command": "npx",
-    "args": ["-y", "@modelcontextprotocol/server-memory"],
-    "type": "stdio"
+  "id": "memory",
+  "title": "Memory Server",
+  "description": "Memory management server for conversation history",
+  "version": "latest",
+  "type": "stdio",
+  "command": "npx",
+  "args": [
+    "-y",
+    "@modelcontextprotocol/server-memory"
+  ],
+  "tags": [
+    "memory",
+    "conversation history",
+    "context management"
+  ]
 }
 ```
 
-### MongoDB Server
+### MongoDB
 
-MCP server for executing MongoDB queries and managing MongoDB databases
+MCP server for executing MongoDB queries and managing MongoDB databases with local connection support
 
 **Details:**
 ```json
 {
-    "command": "npx",
-    "args": ["-y", "@pash1986/mcp-server-mongodb"],
-    "type": "stdio"
+  "id": "mongodb",
+  "title": "MongoDB",
+  "description": "MCP server for executing MongoDB queries and managing MongoDB databases with local connection support",
+  "version": "latest",
+  "type": "stdio",
+  "command": "npx",
+  "args": [
+    "-y",
+    "@pash1986/mcp-server-mongodb"
+  ],
+  "tags": [
+    "database",
+    "query",
+    "nosql",
+    "mongodb"
+  ]
 }
 ```
 
-### Playwright Server
+### Playwright
 
-MCP server for browser automation and testing using Playwright
+MCP server for browser automation and testing using Playwright with support for multiple browser engines
 
 **Details:**
 ```json
 {
-    "command": "npx",
-    "args": ["-y", "@automatalabs/mcp-server-playwright"],
-    "type": "stdio"
+  "id": "playwright",
+  "title": "Playwright",
+  "description": "MCP server for browser automation and testing using Playwright with support for multiple browser engines",
+  "version": "latest",
+  "type": "stdio",
+  "command": "npx",
+  "args": [
+    "-y",
+    "@automatalabs/mcp-server-playwright"
+  ],
+  "tags": [
+    "automation",
+    "testing",
+    "browser",
+    "scraping"
+  ]
 }
 ```
 
-### PostgreSQL Server
+### PostgreSQL
 
-MCP server for PostgreSQL database operations with comprehensive query support
+MCP server for PostgreSQL database operations with support for queries, transactions, and schema management
 
 **Details:**
 ```json
 {
-    "command": "npx",
-    "args": ["-y", "@modelcontextprotocol/server-postgres"],
-    "type": "stdio"
+  "id": "postgres",
+  "title": "PostgreSQL",
+  "description": "MCP server for PostgreSQL database operations with support for queries, transactions, and schema management",
+  "version": "latest",
+  "type": "stdio",
+  "command": "npx",
+  "args": [
+    "-y",
+    "@modelcontextprotocol/server-postgres"
+  ],
+  "tags": [
+    "database",
+    "sql",
+    "postgresql",
+    "relational"
+  ]
 }
 ```
 
@@ -357,9 +510,21 @@ Browser automation server using Puppeteer
 **Details:**
 ```json
 {
-    "command": "npx",
-    "args": ["-y", "@modelcontextprotocol/server-puppeteer"],
-    "type": "stdio"
+  "id": "puppeteer",
+  "title": "Puppeteer Server",
+  "description": "Browser automation server using Puppeteer",
+  "version": "latest",
+  "type": "stdio",
+  "command": "npx",
+  "args": [
+    "-y",
+    "@modelcontextprotocol/server-puppeteer"
+  ],
+  "tags": [
+    "browser automation",
+    "web scraping",
+    "testing"
+  ]
 }
 ```
 
@@ -370,9 +535,21 @@ Sequential thinking server for step-by-step reasoning
 **Details:**
 ```json
 {
-    "command": "npx",
-    "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"],
-    "type": "stdio"
+  "id": "sequential-thinking",
+  "title": "Sequential Thinking Server",
+  "description": "Sequential thinking server for step-by-step reasoning",
+  "version": "latest",
+  "type": "stdio",
+  "command": "npx",
+  "args": [
+    "-y",
+    "@modelcontextprotocol/server-sequential-thinking"
+  ],
+  "tags": [
+    "reasoning",
+    "step-by-step",
+    "problem solving"
+  ]
 }
 ```
 
@@ -515,4 +692,4 @@ Retrieval of transcripts from YouTube videos
 
 ---
 
-Last updated: 2024-01-17 15:30:00
+Last updated: 2024-12-19 16:02:13
