@@ -20,6 +20,12 @@ A curated list of Model Context Protocol (MCP) servers and tools.
 - [PostgreSQL Server](#postgresql)
 - [Puppeteer Server](#puppeteer)
 - [Sequential Thinking Server](#sequential-thinking)
+- [Slack](#slack)
+- [Timezone](#time)
+- [Todoist](#todoist)
+- [X(Twitter)](#twitter-mcp)
+- [Windows CLI](#windows-cli)
+- [YouTube Transcript](#youtube-transcript)
 
 ## Servers
 
@@ -153,6 +159,145 @@ MCP server for Home Assistant home automation platform integration
 }
 ```
 
+### Filesystem
+
+Secure file operations with configurable access controls
+
+**Details:**
+```json
+{
+  "id": "filesystem",
+  "title": "Filesystem",
+  "description": "Secure file operations with configurable access controls",
+  "version": "latest",
+  "type": "N/A",
+  "command": "npx",
+  "args": [
+    "-y",
+    "@modelcontextprotocol/server-filesystem",
+    "$ALLOWED_DIRS|path$"
+  ],
+  "tags": [
+    "file operation"
+  ]
+}
+```
+
+### Git
+
+Tools to read, search, and manipulate Git repositories
+
+**Details:**
+```json
+{
+  "id": "git",
+  "title": "Git",
+  "description": "Tools to read, search, and manipulate Git repositories",
+  "version": "latest",
+  "type": "N/A",
+  "command": "uvx",
+  "args": [
+    "mcp-server-git",
+    "--repository",
+    "$REPO_PATH|path$"
+  ],
+  "tags": [
+    "git"
+  ]
+}
+```
+
+### Github
+
+Repository management, file operations, and GitHub API integration
+
+**Details:**
+```json
+{
+  "id": "github",
+  "title": "Github",
+  "description": "Repository management, file operations, and GitHub API integration",
+  "version": "latest",
+  "type": "N/A",
+  "command": "npx",
+  "args": [
+    "-y",
+    "@modelcontextprotocol/server-github"
+  ],
+  "tags": [
+    "git",
+    "github"
+  ]
+}
+```
+
+### Google Maps
+
+Location services, directions, and place details
+
+**Details:**
+```json
+{
+  "id": "google-maps",
+  "title": "Google Maps",
+  "description": "Location services, directions, and place details",
+  "version": "latest",
+  "type": "N/A",
+  "command": "npx",
+  "args": [
+    "-y",
+    "@modelcontextprotocol/server-google-maps"
+  ],
+  "tags": [
+    "location"
+  ]
+}
+```
+
+### Kubernetes
+
+Connect to Kubernetes cluster and manage pods, deployments, and services.
+
+**Details:**
+```json
+{
+  "id": "kubernetes",
+  "title": "Kubernetes",
+  "description": "Connect to Kubernetes cluster and manage pods, deployments, and services.",
+  "version": "latest",
+  "type": "N/A",
+  "command": "npx",
+  "args": [
+    "mcp-server-kubernetes"
+  ],
+  "tags": [
+    "kubernetes"
+  ]
+}
+```
+
+### Pandoc
+
+MCP server for seamless document format conversion using Pandoc, supporting Markdown, HTML, and plain text, with other formats like PDF, csv and docx in development.
+
+**Details:**
+```json
+{
+  "id": "mcp-pandoc",
+  "title": "Pandoc",
+  "description": "MCP server for seamless document format conversion using Pandoc, supporting Markdown, HTML, and plain text, with other formats like PDF, csv and docx in development.",
+  "version": "latest",
+  "type": "N/A",
+  "command": "uvx",
+  "args": [
+    "mcp-pandoc"
+  ],
+  "tags": [
+    "file operation"
+  ]
+}
+```
+
 ### Memory Server
 
 Memory management server for conversation history
@@ -228,6 +373,143 @@ Sequential thinking server for step-by-step reasoning
     "command": "npx",
     "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"],
     "type": "stdio"
+}
+```
+
+### Slack
+
+Channel management and messaging capabilities
+
+**Details:**
+```json
+{
+  "id": "slack",
+  "title": "Slack",
+  "description": "Channel management and messaging capabilities",
+  "version": "latest",
+  "type": "N/A",
+  "command": "npx",
+  "args": [
+    "-y",
+    "@modelcontextprotocol/server-slack"
+  ],
+  "tags": [
+    "slack"
+  ]
+}
+```
+
+### Timezone
+
+Time and timezone conversion capabilities
+
+**Details:**
+```json
+{
+  "id": "time",
+  "title": "Timezone",
+  "description": "Time and timezone conversion capabilities",
+  "version": "latest",
+  "type": "N/A",
+  "command": "uvx",
+  "args": [
+    "mcp-server-time"
+  ],
+  "tags": [
+    "time"
+  ]
+}
+```
+
+### Todoist
+
+Interact with Todoist to manage your tasks.
+
+**Details:**
+```json
+{
+  "id": "todoist",
+  "title": "Todoist",
+  "description": "Interact with Todoist to manage your tasks.",
+  "version": "latest",
+  "type": "N/A",
+  "command": "npx",
+  "args": [
+    "-y",
+    "@abhiz123/todoist-mcp-server"
+  ],
+  "tags": [
+    "todoist"
+  ]
+}
+```
+
+### X(Twitter)
+
+Interact with twitter API. Post tweets and search for tweets by query.
+
+**Details:**
+```json
+{
+  "id": "twitter-mcp",
+  "title": "X(Twitter)",
+  "description": "Interact with twitter API. Post tweets and search for tweets by query.",
+  "version": "latest",
+  "type": "N/A",
+  "command": "npx",
+  "args": [
+    "-y",
+    "@enescinar/twitter-mcp"
+  ],
+  "tags": [
+    "twitter"
+  ]
+}
+```
+
+### Windows CLI
+
+MCP server for secure command-line interactions on Windows systems, enabling controlled access to PowerShell, CMD, and Git Bash shells.
+
+**Details:**
+```json
+{
+  "id": "windows-cli",
+  "title": "Windows CLI",
+  "description": "MCP server for secure command-line interactions on Windows systems, enabling controlled access to PowerShell, CMD, and Git Bash shells.",
+  "version": "latest",
+  "type": "N/A",
+  "command": "npx",
+  "args": [
+    "-y",
+    "@simonb97/server-win-cli"
+  ],
+  "tags": [
+    "windows"
+  ]
+}
+```
+
+### YouTube Transcript
+
+Retrieval of transcripts from YouTube videos
+
+**Details:**
+```json
+{
+  "id": "youtube-transcript",
+  "title": "YouTube Transcript",
+  "description": "Retrieval of transcripts from YouTube videos",
+  "version": "latest",
+  "type": "N/A",
+  "command": "npx",
+  "args": [
+    "-y",
+    "@kimtaeyoon83/mcp-server-youtube-transcript"
+  ],
+  "tags": [
+    "youtube"
+  ]
 }
 ```
 
