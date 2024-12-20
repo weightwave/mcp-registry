@@ -9,7 +9,7 @@
     "publishDate": "2024-12-17T14:55:00Z",
     "rating": 5,
     "sources": {
-        "github": "https://github.com/modelcontextprotocol/server-google-maps",
+        "github": "https://github.com/modelcontextprotocol/servers/tree/main/src/google-maps",
         "npm": "https://www.npmjs.com/package/@modelcontextprotocol/server-google-maps"
     },
     "type": "stdio",
