@@ -7,6 +7,10 @@
     "logoUrl": "https://app.mcphub.net/server-configuration/image/gdrive.svg",
     "publishDate": "2024-01-17T00:00:00Z",
     "rating": 5,
+    "sources": {
+        "github": "https://github.com/modelcontextprotocol/server-gdrive",
+        "npm": "https://www.npmjs.com/package/@modelcontextprotocol/server-gdrive"
+    },
     "type": "stdio",
     "commandInfo": {
         "command": "npx",
