@@ -8,6 +8,10 @@
     "logoUrl": "https://app.mcphub.net/server-configuration/image/mongodb.svg",
     "publishDate": "2024-01-17T00:00:00Z",
     "rating": 5,
+    "sources": {
+        "github": "https://github.com/pash1986/mcp-server-mongodb",
+        "npm": "https://www.npmjs.com/package/@pash1986/mcp-server-mongodb"
+    },
     "type": "stdio",
     "commandInfo": {
         "command": "npx",
