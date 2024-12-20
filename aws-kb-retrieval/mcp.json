@@ -10,7 +10,7 @@
     "publishDate": "2024-12-13T12:00:00Z",
     "rating": 5,
     "sources": {
-        "github": "https://github.com/modelcontextprotocol/server-aws-kb-retrieval",
+        "github": "https://github.com/modelcontextprotocol/servers/tree/main/src/aws-kb-retrieval-server",
         "npm": "https://www.npmjs.com/package/@modelcontextprotocol/server-aws-kb-retrieval"
     },
     "type": "stdio",
