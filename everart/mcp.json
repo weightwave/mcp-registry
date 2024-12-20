@@ -10,7 +10,7 @@
     "publishDate": "2024-12-08T18:00:00Z",
     "rating": 5,
     "sources": {
-        "github": "https://github.com/modelcontextprotocol/server-everart",
+        "github": "https://github.com/modelcontextprotocol/servers/tree/main/src/everart",
         "npm": "https://www.npmjs.com/package/@modelcontextprotocol/server-everart"
     },
     "type": "stdio",
