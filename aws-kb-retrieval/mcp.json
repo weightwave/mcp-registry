@@ -9,6 +9,11 @@
     "logoUrl": "https://app.mcphub.net/server-configuration/image/aws-kb-retrieval.svg",
     "publishDate": "2024-12-13T12:00:00Z",
     "rating": 5,
+    "sources": {
+        "github": "https://github.com/modelcontextprotocol/server-aws-kb-retrieval",
+        "npm": "https://www.npmjs.com/package/@modelcontextprotocol/server-aws-kb-retrieval"
+    },
+    "type": "stdio",
     "commandInfo": {
         "command": "npx",
         "args": [
