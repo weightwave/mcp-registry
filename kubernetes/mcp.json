@@ -9,6 +9,11 @@
     "logoUrl": "https://app.mcphub.net/server-configuration/image/kubernetes.svg",
     "publishDate": "2024-12-13T12:00:00Z",
     "rating": 5,
+    "sources": {
+        "github": "https://github.com/Flux159/mcp-server-kubernetes",
+        "npm": "https://www.npmjs.com/package/mcp-server-kubernetes"
+    },
+    "type": "stdio",
     "commandInfo": {
         "command": "npx",
         "args": [
