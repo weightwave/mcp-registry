@@ -9,6 +9,11 @@
     "logoUrl": "https://app.mcphub.net/server-configuration/image/slack.svg",
     "publishDate": "2024-12-08T18:00:00Z",
     "rating": 5,
+    "sources": {
+        "github": "https://github.com/modelcontextprotocol/servers/tree/main/src/slack",
+        "npm": "https://www.npmjs.com/package/@modelcontextprotocol/server-slack"
+    },
+    "type": "stdio",
     "commandInfo": {
         "command": "npx",
         "args": [

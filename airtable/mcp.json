@@ -7,6 +7,10 @@
     "logoUrl": "https://app.mcphub.net/server-configuration/image/airtable.svg",
     "publishDate": "2024-01-17T00:00:00Z",
     "rating": 5,
+    "sources": {
+        "github": "https://github.com/felores/mcp-airtable",
+        "npm": "https://www.npmjs.com/package/mcp-airtable"
+    },
     "type": "stdio",
     "commandInfo": {
         "command": "node",

@@ -7,6 +7,10 @@
     "logoUrl": "https://app.mcphub.net/server-configuration/image/cloudflare.svg",
     "publishDate": "2024-01-17T00:00:00Z",
     "rating": 5,
+    "sources": {
+        "github": "https://github.com/cloudflare/mcp-server-cloudflare",
+        "npm": "https://www.npmjs.com/package/@cloudflare/mcp-server-cloudflare"
+    },
     "type": "stdio",
     "commandInfo": {
         "command": "npx",

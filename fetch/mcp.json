@@ -12,7 +12,11 @@
   "publishDate": "2024-12-17T12:49:12Z",
   "rating": 5,
   "version": "latest",
-  "homepage": "https://github.com/modelcontextprotocol/server-fetch",
+  "homepage": "https://github.com/modelcontextprotocol/servers/tree/main/src/fetch",
+  "sources": {
+    "github": "https://github.com/modelcontextprotocol/servers/tree/main/src/fetch",
+    "npm": "https://www.npmjs.com/package/@modelcontextprotocol/server-fetch"
+  },
   "type": "stdio",
   "commandInfo": {
     "command": "uvx",

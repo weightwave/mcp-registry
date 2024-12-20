@@ -9,6 +9,11 @@
     "logoUrl": "https://app.mcphub.net/server-configuration/image/windows-cli.svg",
     "publishDate": "2024-12-13T12:00:00Z",
     "rating": 5,
+    "sources": {
+        "github": "https://github.com/SimonB97/server-win-cli",
+        "npm": "https://www.npmjs.com/package/@simonb97/server-win-cli"
+    },
+    "type": "stdio",
     "commandInfo": {
         "command": "npx",
         "args": [

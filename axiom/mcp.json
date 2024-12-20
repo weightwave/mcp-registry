@@ -7,6 +7,10 @@
     "logoUrl": "https://app.mcphub.net/server-configuration/image/axiom.svg",
     "publishDate": "2024-01-17T00:00:00Z",
     "rating": 5,
+    "sources": {
+        "github": "https://github.com/axiomhq/axiom-mcp",
+        "npm": "https://www.npmjs.com/package/axiom-mcp"
+    },
     "type": "stdio",
     "commandInfo": {
         "command": "axiom-mcp",

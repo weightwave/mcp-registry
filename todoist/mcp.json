@@ -9,6 +9,11 @@
     "logoUrl": "https://app.mcphub.net/server-configuration/image/todoist.svg",
     "publishDate": "2024-12-13T12:00:00Z",
     "rating": 5,
+    "sources": {
+        "github": "https://github.com/abhiz123/todoist-mcp-server",
+        "npm": "https://www.npmjs.com/package/@abhiz123/todoist-mcp-server"
+    },
+    "type": "stdio",
     "commandInfo": {
         "command": "npx",
         "args": [
