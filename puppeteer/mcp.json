@@ -13,6 +13,10 @@
   "rating": 5,
   "version": "latest",
   "homepage": "https://github.com/modelcontextprotocol/server-puppeteer",
+  "sources": {
+    "github": "https://github.com/modelcontextprotocol/server-puppeteer",
+    "npm": "https://www.npmjs.com/package/@modelcontextprotocol/server-puppeteer"
+  },
   "type": "stdio",
   "commandInfo": {
     "command": "npx",

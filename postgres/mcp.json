@@ -8,6 +8,10 @@
     "logoUrl": "https://app.mcphub.net/server-configuration/image/postgres.svg",
     "publishDate": "2024-01-17T00:00:00Z",
     "rating": 5,
+    "sources": {
+        "github": "https://github.com/modelcontextprotocol/server-postgres",
+        "npm": "https://www.npmjs.com/package/@modelcontextprotocol/server-postgres"
+    },
     "type": "stdio",
     "commandInfo": {
         "command": "npx",
