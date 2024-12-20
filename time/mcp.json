@@ -9,6 +9,11 @@
     "logoUrl": "https://app.mcphub.net/server-configuration/image/time.svg",
     "publishDate": "2024-12-13T12:00:00Z",
     "rating": 5,
+    "sources": {
+        "github": "https://github.com/modelcontextprotocol/server-time",
+        "npm": "https://www.npmjs.com/package/mcp-server-time"
+    },
+    "type": "stdio",
     "commandInfo": {
         "command": "uvx",
         "args": [
