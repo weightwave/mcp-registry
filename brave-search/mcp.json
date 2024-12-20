@@ -7,6 +7,10 @@
     "logoUrl": "https://app.mcphub.net/server-configuration/image/brave-search.svg",
     "publishDate": "2024-12-17T14:55:00Z",
     "rating": 5,
+    "sources": {
+        "github": "https://github.com/modelcontextprotocol/server-brave-search",
+        "npm": "https://www.npmjs.com/package/@modelcontextprotocol/server-brave-search"
+    },
     "type": "stdio",
     "commandInfo": {
         "command": "npx",

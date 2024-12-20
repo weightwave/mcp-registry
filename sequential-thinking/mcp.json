@@ -13,6 +13,10 @@
   "rating": 5,
   "version": "latest",
   "homepage": "https://github.com/modelcontextprotocol/server-sequential-thinking",
+  "sources": {
+    "github": "https://github.com/modelcontextprotocol/server-sequential-thinking",
+    "npm": "https://www.npmjs.com/package/@modelcontextprotocol/server-sequential-thinking"
+  },
   "type": "stdio",
   "commandInfo": {
     "command": "npx",

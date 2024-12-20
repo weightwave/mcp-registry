@@ -13,6 +13,10 @@
   "rating": 5,
   "version": "latest",
   "homepage": "https://github.com/modelcontextprotocol/server-fetch",
+  "sources": {
+    "github": "https://github.com/modelcontextprotocol/server-fetch",
+    "npm": "https://www.npmjs.com/package/mcp-server-fetch"
+  },
   "type": "stdio",
   "commandInfo": {
     "command": "uvx",
