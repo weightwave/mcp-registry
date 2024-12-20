@@ -8,6 +8,10 @@
     "logoUrl": "https://app.mcphub.net/server-configuration/image/playwright.svg",
     "publishDate": "2024-01-17T00:00:00Z",
     "rating": 5,
+    "sources": {
+        "github": "https://github.com/automatalabs/mcp-server-playwright",
+        "npm": "https://www.npmjs.com/package/@automatalabs/mcp-server-playwright"
+    },
     "type": "stdio",
     "commandInfo": {
         "command": "npx",
