@@ -8,6 +8,10 @@
     "logoUrl": "https://app.mcphub.net/server-configuration/image/home-assistant.svg",
     "publishDate": "2024-01-17T00:00:00Z",
     "rating": 5,
+    "sources": {
+        "github": "https://github.com/allenporter/mcp-server-home-assistant",
+        "npm": "https://pypi.org/project/mcp-server-home-assistant"
+    },
     "type": "stdio",
     "commandInfo": {
         "command": "python",
