@@ -1,6 +1,5 @@
 {
     "id": "filesystem",
-    "name": "Filesystem Server",
     "title": "Filesystem",
     "description": "Node.js server implementing Model Context Protocol (MCP) for filesystem operations",
     "tags": ["file operation", "filesystem"],

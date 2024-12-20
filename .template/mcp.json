@@ -1,5 +1,6 @@
 {
     "id": "airtable",
+    "name": "Airtable Server",
     "title": "Airtable",
     "description": "MCP server for managing Airtable bases and tables with comprehensive API support for base, table, field, and record operations",
     "tags": ["database", "api", "tables", "records", "fields"],
@@ -15,6 +16,7 @@
             "AIRTABLE_API_KEY": "<YOUR_API_KEY>"
         }
     },
+    "defVersion": "1",
     "parameters": {
         "AIRTABLE_API_KEY": {
             "type": "string",

@@ -1,6 +1,5 @@
 {
     "id": "cloudflare",
-    "name": "Cloudflare Server",
     "title": "Cloudflare",
     "description": "MCP server for Cloudflare API integration with support for DNS, Workers, and security services",
     "tags": ["cdn", "dns", "security", "workers"],
