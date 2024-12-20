@@ -1,31 +1,36 @@
-const express = require('express');
-const cors = require('cors');
+const fastify = require('fastify')({ logger: true });
+const cors = require('@fastify/cors');
 const fs = require('fs').promises;
 const path = require('path');
 
-const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Middleware
-app.use(cors());
-app.use(express.json());
+// Register CORS
+fastify.register(cors);
 
-// Load registry from directories
-async function loadRegistry() {
-    const registry = {};
+// Load registry from directories recursively
+async function scanDirectory(dir, registry = [], prefix = '') {
     try {
-        const items = await fs.readdir('.');
+        const items = await fs.readdir(dir);
         for (const item of items) {
-            const mcpJsonPath = path.join(item, 'mcp.json');
+            // ignore directory starting with '.' and node_modules
+            if (item.startsWith('.') || item === 'node_modules') {
+                continue;
+            }
+            const fullPath = path.join(dir, item);
+            const mcpJsonPath = path.join(fullPath, 'mcp.json');
+            const relativePath = prefix ? path.join(prefix, item) : item;
+            
             try {
-                const stat = await fs.stat(item);
+                const stat = await fs.stat(fullPath);
                 if (stat.isDirectory()) {
                     try {
                         const configData = await fs.readFile(mcpJsonPath, 'utf8');
-                        registry[item] = JSON.parse(configData);
+                        const mcpData = JSON.parse(configData);
+                        registry.push(mcpData);
                     } catch (err) {
-                        // Skip if mcp.json doesn't exist or can't be read
-                        continue;
+                        // If no mcp.json, continue scanning subdirectories
+                        await scanDirectory(fullPath, registry, relativePath);
                     }
                 }
             } catch (err) {
@@ -34,70 +39,90 @@ async function loadRegistry() {
         }
         return registry;
     } catch (err) {
+        console.error(`Error scanning directory ${dir}:`, err);
+        return registry;
+    }
+}
+
+async function loadRegistry() {
+    try {
+        return await scanDirectory('.');
+    } catch (err) {
         console.error('Error loading registry:', err);
-        return {};
+        return [];
     }
 }
 
 // Welcome endpoint
-app.get('/', (req, res) => {
-    res.json({ message: 'Welcome to MCP Registry API' });
+fastify.get('/', async (request, reply) => {
+    return { message: 'Welcome to MCP Registry API' };
 });
 
 // Get entire registry
-app.get('/registry', async (req, res) => {
+fastify.get('/registry', async (request, reply) => {
     try {
         const registry = await loadRegistry();
-        res.json(registry);
+        return registry;
     } catch (err) {
-        res.status(500).json({ error: 'Failed to load registry' });
-    }
-});
-
-// Get specific MCP configuration
-app.get('/registry/:name', async (req, res) => {
-    try {
-        const registry = await loadRegistry();
-        const name = req.params.name;
-        
-        if (!registry[name]) {
-            return res.status(404).json({ error: `MCP '${name}' not found` });
-        }
-        
-        res.json({
-            name,
-            config: registry[name]
-        });
-    } catch (err) {
-        res.status(500).json({ error: 'Failed to load registry item' });
+        reply.code(500);
+        return { error: 'Failed to load registry' };
     }
 });
 
 // Search registry
-app.get('/search', async (req, res) => {
+fastify.get('/search', async (request, reply) => {
     try {
+        const { q } = request.query;
+        if (!q) {
+            reply.code(400);
+            return { error: 'Search query is required' };
+        }
+
         const registry = await loadRegistry();
-        const query = (req.query.q || '').toLowerCase();
+        const searchTerm = q.toLowerCase();
         
-        if (!query) {
-            return res.json(registry);
-        }
-        
-        const results = {};
-        for (const [name, config] of Object.entries(registry)) {
-            if (name.toLowerCase().includes(query) || 
-                config.description.toLowerCase().includes(query)) {
-                results[name] = config;
-            }
-        }
-        
-        res.json(results);
+        const results = registry.filter(mcp => {
+            return (
+                mcp.id.toLowerCase().includes(searchTerm) ||
+                mcp.title.toLowerCase().includes(searchTerm) ||
+                mcp.description.toLowerCase().includes(searchTerm) ||
+                (mcp.tags && mcp.tags.some(tag => tag.toLowerCase().includes(searchTerm)))
+            );
+        });
+
+        return results;
     } catch (err) {
-        res.status(500).json({ error: 'Failed to search registry' });
+        reply.code(500);
+        return { error: 'Search failed' };
     }
 });
 
-// Start server
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+// Get specific MCP by ID
+fastify.get('/registry/:id', async (request, reply) => {
+    try {
+        const registry = await loadRegistry();
+        const mcp = registry.find(m => m.id === request.params.id);
+        
+        if (!mcp) {
+            reply.code(404);
+            return { error: 'MCP not found' };
+        }
+        
+        return mcp;
+    } catch (err) {
+        reply.code(500);
+        return { error: 'Failed to get MCP' };
+    }
 });
+
+// Start the server
+const start = async () => {
+    try {
+        await fastify.listen({ port: PORT, host: '0.0.0.0' });
+    } catch (err) {
+        fastify.log.error(err);
+        process.exit(1);
+    }
+};
+
+start();

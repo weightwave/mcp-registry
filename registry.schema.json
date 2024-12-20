@@ -6,22 +6,60 @@
   "patternProperties": {
     "^[a-zA-Z0-9_-]+$": {
       "type": "object",
-      "required": ["type", "description"],
+      "required": ["type", "description", "name", "id", "title"],
       "properties": {
+        "name": {
+          "type": "string",
+          "description": "Display name of the MCP server"
+        },
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the MCP server"
+        },
+        "title": {
+          "type": "string",
+          "description": "Display title of the MCP server"
+        },
         "description": {
           "type": "string",
           "description": "Detailed description of what this server type does"
         },
-        "command": {
-          "type": "string",
-          "description": "Base command to start the server, not needed for remote SSE servers"
-        },
-        "args": {
+        "tags": {
           "type": "array",
-          "description": "Base arguments before parameters, only used with command",
+          "description": "List of tags describing the server's capabilities",
           "items": {
             "type": "string"
           }
+        },
+        "creator": {
+          "type": "string",
+          "description": "Creator or organization that developed this MCP"
+        },
+        "logoUrl": {
+          "type": "string",
+          "description": "URL to the server's logo image",
+          "format": "uri"
+        },
+        "publishDate": {
+          "type": "string",
+          "description": "Date when this MCP was published",
+          "format": "date-time"
+        },
+        "rating": {
+          "type": "number",
+          "description": "Rating score for this MCP",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "version": {
+          "type": "string",
+          "description": "Version of the MCP server",
+          "default": "latest"
+        },
+        "homepage": {
+          "type": "string",
+          "description": "URL to the MCP's homepage or documentation",
+          "format": "uri"
         },
         "type": {
           "type": "string",
@@ -31,6 +69,31 @@
         "endpoint": {
           "type": "string",
           "description": "Endpoint for SSE connection, required if type is sse"
+        },
+        "commandInfo": {
+          "type": "object",
+          "description": "Command execution information",
+          "properties": {
+            "command": {
+              "type": "string",
+              "description": "Base command to start the server"
+            },
+            "args": {
+              "type": "array",
+              "description": "Base arguments before parameters",
+              "items": {
+                "type": "string"
+              }
+            },
+            "env": {
+              "type": "object",
+              "description": "Environment variables required by the server",
+              "additionalProperties": {
+                "type": "string"
+              }
+            }
+          },
+          "required": ["command", "args"]
         },
         "parameters": {
           "type": "object",
@@ -79,14 +142,14 @@
             "properties": { "type": { "const": "stdio" } }
           },
           "then": {
-            "required": ["command", "parameters"]
+            "required": ["commandInfo", "parameters"]
           }
         },
         {
           "if": {
             "allOf": [
               { "properties": { "type": { "const": "sse" } } },
-              { "required": ["command"] }
+              { "required": ["commandInfo"] }
             ]
           },
           "then": {
