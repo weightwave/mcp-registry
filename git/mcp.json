@@ -10,8 +10,8 @@
     "publishDate": "2024-12-08T18:00:00Z",
     "rating": 5,
     "sources": {
-        "github": "https://github.com/modelcontextprotocol/server-git",
-        "npm": "https://www.npmjs.com/package/mcp-server-git"
+        "github": "https://github.com/modelcontextprotocol/servers/tree/main/src/git",
+        "npm": "https://www.npmjs.com/package/@modelcontextprotocol/server-git"
     },
     "type": "stdio",
     "commandInfo": {
