@@ -14,7 +14,7 @@
   "version": "latest",
   "homepage": "https://github.com/modelcontextprotocol/server-puppeteer",
   "sources": {
-    "github": "https://github.com/modelcontextprotocol/server-puppeteer",
+    "github": "https://github.com/modelcontextprotocol/servers/tree/main/src/puppeteer",
     "npm": "https://www.npmjs.com/package/@modelcontextprotocol/server-puppeteer"
   },
   "type": "stdio",

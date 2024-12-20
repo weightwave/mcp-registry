@@ -14,7 +14,7 @@
   "version": "latest",
   "homepage": "https://github.com/modelcontextprotocol/server-memory",
   "sources": {
-    "github": "https://github.com/modelcontextprotocol/server-memory",
+    "github": "https://github.com/modelcontextprotocol/servers/tree/main/src/memory",
     "npm": "https://www.npmjs.com/package/@modelcontextprotocol/server-memory"
   },
   "type": "stdio",

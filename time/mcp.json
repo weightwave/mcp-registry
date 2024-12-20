@@ -10,8 +10,8 @@
     "publishDate": "2024-12-13T12:00:00Z",
     "rating": 5,
     "sources": {
-        "github": "https://github.com/modelcontextprotocol/server-time",
-        "npm": "https://www.npmjs.com/package/mcp-server-time"
+        "github": "https://github.com/modelcontextprotocol/servers/tree/main/src/time",
+        "npm": "https://www.npmjs.com/package/@modelcontextprotocol/server-time"
     },
     "type": "stdio",
     "commandInfo": {
