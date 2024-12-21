@@ -6,6 +6,7 @@
         "image generation"
     ],
     "creator": "Official",
+    "verified": false,
     "logoUrl": "https://app.mcphub.net/server-configuration/image/everart.svg",
     "publishDate": "2024-12-08T18:00:00Z",
     "rating": 5,
@@ -21,7 +22,14 @@
             "@modelcontextprotocol/server-everart"
         ],
         "env": {
-            "EVERART_API_KEY": "YOUR_API_KEY_HERE"
+            "EVERART_API_KEY": "**EVERART_API_KEY**"
+        }
+    },
+    "parameters": {
+        "EVERART_API_KEY": {
+            "type": "string",
+            "required": true,
+            "description": "API key for EverArt API access"
         }
     }
 }

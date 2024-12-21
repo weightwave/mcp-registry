@@ -1,6 +1,6 @@
 {
-    "id": "windows-cli",
-    "title": "Windows CLI",
+    "id": "windows-cli-mcp-server",
+    "title": "Windows CLI MCP Server",
     "description": "MCP server for secure command-line interactions on Windows systems, enabling controlled access to PowerShell, CMD, and Git Bash shells.",
     "tags": [
         "windows"
@@ -10,7 +10,7 @@
     "publishDate": "2024-12-13T12:00:00Z",
     "rating": 5,
     "sources": {
-        "github": "https://github.com/SimonB97/server-win-cli",
+        "github": "https://github.com/SimonB97/win-cli-mcp-server",
         "npm": "https://www.npmjs.com/package/@simonb97/server-win-cli"
     },
     "type": "stdio",

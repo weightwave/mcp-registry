@@ -5,7 +5,7 @@
     "description": "MCP server for PostgreSQL database operations with support for queries, transactions, and schema management",
     "tags": ["database", "sql", "postgresql", "relational"],
     "creator": "@modelcontextprotocol",
-    "logoUrl": "https://app.mcphub.net/server-configuration/image/postgres.svg",
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/1200px-Postgresql_elephant.svg.png",
     "publishDate": "2024-01-17T00:00:00Z",
     "rating": 5,
     "sources": {
@@ -15,44 +15,17 @@
     "type": "stdio",
     "commandInfo": {
         "command": "npx",
-        "args": ["-y", "@modelcontextprotocol/server-postgres"],
-        "env": {
-            "POSTGRES_CONNECTION_STRING": "<YOUR_CONNECTION_STRING>",
-            "POSTGRES_SSL_MODE": "require"
-        }
+        "args": [
+          "-y",
+          "@modelcontextprotocol/server-postgres",
+          "**POSTGRESQL_URL**"
+        ]
     },
     "parameters": {
-        "POSTGRES_CONNECTION_STRING": {
+        "POSTGRESQL_URI": {
             "type": "string",
             "required": true,
-            "description": "PostgreSQL connection string (URL format)",
-            "argTemplate": "--connection={value}"
-        },
-        "POSTGRES_SSL_MODE": {
-            "type": "string",
-            "required": false,
-            "description": "SSL mode for connection (disable, require, verify-ca, verify-full)",
-            "argTemplate": "--ssl-mode={value}",
-            "default": "require"
-        },
-        "POSTGRES_SCHEMA": {
-            "type": "string",
-            "required": false,
-            "description": "Default schema to use",
-            "argTemplate": "--schema={value}",
-            "default": "public"
-        }
-    },
-    "features": {
-        "capabilities": {
-            "queries": ["select", "insert", "update", "delete"],
-            "schema": ["create", "alter", "drop"],
-            "transactions": ["begin", "commit", "rollback"],
-            "extensions": ["manage", "install"]
-        },
-        "security": {
-            "ssl": true,
-            "authentication": ["password", "certificate"]
+            "description": "PostgreSQL url like postgresql://user:password@host:port/db-name"
         }
     }
 }
