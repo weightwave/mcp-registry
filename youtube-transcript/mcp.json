@@ -6,6 +6,7 @@
         "youtube"
     ],
     "creator": "kimtaeyoon83",
+    "verified": false,
     "logoUrl": "https://app.mcphub.net/server-configuration/image/youtube-transcript.svg",
     "publishDate": "2024-12-13T12:00:00Z",
     "rating": 5,
@@ -16,10 +17,7 @@
     "type": "stdio",
     "commandInfo": {
         "command": "npx",
-        "args": [
-            "-y",
-            "@kimtaeyoon83/mcp-server-youtube-transcript"
-        ]
+        "args": ["-y", "@kimtaeyoon83/mcp-server-youtube-transcript"]
     },
-    "documentation": "Tell Claude: `chat: https://youtu.be/ODaHJzOyVCQ?si=aXkJgso96Deri0aB Extract subtitles`"
+    "parameters": {}
 }

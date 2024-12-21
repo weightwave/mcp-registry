@@ -7,12 +7,11 @@
     "step-by-step",
     "problem solving"
   ],
-  "creator": "Official",
+  "creator": "@modelcontextprotocol",
+  "verified": false,
   "logoUrl": "https://app.mcphub.net/server-configuration/image/sequential-thinking.svg",
   "publishDate": "2024-12-17T12:49:12Z",
   "rating": 5,
-  "version": "latest",
-  "homepage": "https://github.com/modelcontextprotocol/server-sequential-thinking",
   "sources": {
     "github": "https://github.com/modelcontextprotocol/server-sequential-thinking",
     "npm": "https://www.npmjs.com/package/@modelcontextprotocol/server-sequential-thinking"
@@ -20,8 +19,7 @@
   "type": "stdio",
   "commandInfo": {
     "command": "npx",
-    "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"],
-    "env": {}
+    "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"]
   },
   "parameters": {}
 }

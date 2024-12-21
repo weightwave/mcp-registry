@@ -1,11 +1,12 @@
 {
-    "id": "time",
-    "title": "Timezone",
+    "id": "time-mcp-server",
+    "title": "Time MCP Server",
     "description": "Time and timezone conversion capabilities",
     "tags": [
         "time"
     ],
-    "creator": "Official",
+    "creator": "@modelcontextprotocol",
+    "verified": false,
     "logoUrl": "https://app.mcphub.net/server-configuration/image/time.svg",
     "publishDate": "2024-12-13T12:00:00Z",
     "rating": 5,
@@ -16,8 +17,6 @@
     "type": "stdio",
     "commandInfo": {
         "command": "uvx",
-        "args": [
-            "mcp-server-time"
-        ]
+        "args": ["mcp-server-time"]
     }
 }
