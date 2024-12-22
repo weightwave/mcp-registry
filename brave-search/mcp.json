@@ -4,6 +4,7 @@
     "description": "MCP server for Brave Search API integration",
     "tags": ["search", "api"],
     "creator": "Official",
+    "verified": false,
     "logoUrl": "https://app.mcphub.net/server-configuration/image/brave-search.svg",
     "publishDate": "2024-12-17T14:55:00Z",
     "rating": 5,
@@ -16,15 +17,14 @@
         "command": "npx",
         "args": ["-y", "@modelcontextprotocol/server-brave-search"],
         "env": {
-            "BRAVE_API_KEY": "YOUR_API_KEY_HERE"
+            "BRAVE_API_KEY": "**BRAVE_API_KEY**"
         }
     },
     "parameters": {
         "BRAVE_API_KEY": {
             "type": "string",
             "required": true,
-            "description": "API key for Brave Search API access",
-            "argTemplate": "--api-key={value}"
+            "description": "API key for Brave Search API access"
         }
     }
 }

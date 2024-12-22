@@ -18,8 +18,15 @@
         "command": "uvx",
         "args": [
             "mcp-server-git",
-            "--repository",
-            "$REPO_PATH|path$"
+            "--repository **REPOSITORY**"
         ]
+    },
+    
+    "parameters": {
+        "REPOSITORY": {
+            "type": "string",
+            "required": true,
+            "description": "Path to the Git repository"
+        }
     }
 }
