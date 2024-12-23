@@ -5,6 +5,10 @@
     "tags": [
         "slack"
     ],
+    "categories": [
+        "Integration & Delivery",
+        "Message Queues"
+    ],
     "creator": "@modelcontextprotocol",
     "verified": false,
     "logoUrl": "https://app.mcphub.net/server-configuration/image/slack.svg",

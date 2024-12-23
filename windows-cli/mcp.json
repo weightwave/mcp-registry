@@ -5,6 +5,10 @@
     "tags": [
         "windows"
     ],
+    "categories": [
+        "Operating Systems",
+        "Developer Tools"
+    ],
     "creator": "SimonB97",
     "logoUrl": "https://app.mcphub.net/server-configuration/image/windows-cli.svg",
     "publishDate": "2024-12-13T12:00:00Z",

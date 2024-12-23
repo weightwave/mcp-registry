@@ -3,6 +3,9 @@
     "title": "Filesystem",
     "description": "Node.js server implementing Model Context Protocol (MCP) for filesystem operations",
     "tags": ["file operation", "filesystem"],
+    "categories": [
+        "Operating Systems"
+    ],
     "creator": "jspahrsummers",
     "verified": false,
     "logoUrl": "https://app.mcphub.net/server-configuration/image/filesystem.svg",

@@ -5,6 +5,10 @@
     "tags": [
         "knowledge base"
     ],
+    "categories": [
+        "Data Science",
+        "API Management"
+    ],
     "creator": "Official",
     "verified": false,
     "logoUrl": "https://app.mcphub.net/server-configuration/image/aws-kb-retrieval.svg",

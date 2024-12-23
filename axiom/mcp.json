@@ -3,6 +3,10 @@
     "title": "Axiom",
     "description": "MCP server for querying data using Axiom Processing Language (APL) with support for dataset operations and APL queries",
     "tags": ["database", "query", "apl", "datasets"],
+    "categories": [
+        "Databases & Storage",
+        "Data Science"
+    ],
     "creator": "axiomhq",
     "verified": false,
     "logoUrl": "https://app.mcphub.net/server-configuration/image/axiom.svg",
