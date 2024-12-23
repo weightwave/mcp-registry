@@ -4,17 +4,25 @@
     "title": "Home Assistant",
     "description": "MCP server for interacting with Home Assistant home automation platform, providing control over smart home devices and automation",
     "tags": ["home-automation", "iot", "smart-home", "automation"],
+    "categories": [
+        "Internet of Things",
+        "Integration & Delivery"
+    ],
     "creator": "allenporter",
     "logoUrl": "https://app.mcphub.net/server-configuration/image/home-assistant.svg",
     "publishDate": "2024-01-17T00:00:00Z",
     "rating": 5,
+    "sources": {
+        "github": "https://github.com/allenporter/mcp-server-home-assistant",
+        "npm": "https://pypi.org/project/mcp-server-home-assistant"
+    },
     "type": "stdio",
     "commandInfo": {
         "command": "python",
         "args": ["-m", "mcp_server_home_assistant"],
         "env": {
-            "HASS_URL": "<YOUR_HOME_ASSISTANT_URL>",
-            "HASS_TOKEN": "<YOUR_LONG_LIVED_ACCESS_TOKEN>"
+            "HASS_URL": "**HASS_URL**",
+            "HASS_TOKEN": "**HASS_TOKEN**"
         }
     },
     "parameters": {
@@ -36,22 +44,6 @@
             "description": "Verify SSL certificate for HTTPS connections",
             "argTemplate": "--verify-ssl={value}",
             "default": true
-        }
-    },
-    "features": {
-        "capabilities": {
-            "devices": ["list", "status", "control"],
-            "services": ["call", "list"],
-            "states": ["get", "set", "subscribe"],
-            "automation": ["trigger", "condition", "action"]
-        },
-        "integrations": {
-            "supported": ["lights", "switches", "sensors", "climate", "media_player"],
-            "extensible": true
-        },
-        "security": {
-            "authentication": "token-based",
-            "encryption": "SSL/TLS"
         }
     }
 }

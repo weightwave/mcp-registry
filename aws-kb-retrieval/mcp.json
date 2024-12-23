@@ -5,10 +5,20 @@
     "tags": [
         "knowledge base"
     ],
+    "categories": [
+        "Data Science",
+        "API Management"
+    ],
     "creator": "Official",
+    "verified": false,
     "logoUrl": "https://app.mcphub.net/server-configuration/image/aws-kb-retrieval.svg",
     "publishDate": "2024-12-13T12:00:00Z",
     "rating": 5,
+    "sources": {
+        "github": "https://github.com/modelcontextprotocol/servers/tree/main/src/aws-kb-retrieval-server",
+        "npm": "https://www.npmjs.com/package/@modelcontextprotocol/server-aws-kb-retrieval"
+    },
+    "type": "stdio",
     "commandInfo": {
         "command": "npx",
         "args": [
@@ -16,9 +26,27 @@
             "@modelcontextprotocol/server-aws-kb-retrieval"
         ],
         "env": {
-            "AWS_ACCESS_KEY_ID": "<YOUR_ACCESS_KEY_ID>",
-            "AWS_SECRET_ACCESS_KEY": "<YOUR_SECRET_ACCESS_KEY>",
-            "AWS_REGION": "<YOUR_REGION>"
+            "AWS_ACCESS_KEY_ID": "**AWS_ACCESS_KEY_ID**",
+            "AWS_SECRET_ACCESS_KEY": "**AWS_SECRET_ACCESS_KEY**",
+            "AWS_REGION": "**AWS_REGION**"
+        }
+    },
+
+    "parameters": {
+        "AWS_ACCESS_KEY_ID": {
+            "type": "string",
+            "required": true,
+            "description": "Your access key"
+        },
+        "AWS_SECRET_ACCESS_KEY": {
+            "type": "string",
+            "required": true,
+            "description": "Your secret access key"
+        },
+        "AWS_REGION": {
+            "type": "string",
+            "required": true,
+            "description": "AWS region"
         }
     }
 }

@@ -1,56 +1,62 @@
 {
     "id": "axiom",
-    "name": "Axiom Server",
     "title": "Axiom",
     "description": "MCP server for querying data using Axiom Processing Language (APL) with support for dataset operations and APL queries",
     "tags": ["database", "query", "apl", "datasets"],
+    "categories": [
+        "Databases & Storage",
+        "Data Science"
+    ],
     "creator": "axiomhq",
+    "verified": false,
     "logoUrl": "https://app.mcphub.net/server-configuration/image/axiom.svg",
     "publishDate": "2024-01-17T00:00:00Z",
     "rating": 5,
+    "sources": {
+        "github": "https://github.com/axiomhq/axiom-mcp",
+        "npm": "https://www.npmjs.com/package/axiom-mcp"
+    },
     "type": "stdio",
     "commandInfo": {
         "command": "axiom-mcp",
-        "args": ["--config", "config.txt"],
-        "env": {
-            "AXIOM_TOKEN": "<YOUR_TOKEN>",
-            "AXIOM_URL": "https://api.axiom.co",
-            "AXIOM_ORG_ID": "<YOUR_ORG_ID>"
-        }
+        "args": [
+            "-token **AXIOM_TOKEN**",
+            "-url https://api.axiom.co",
+            "-query-rate **QUERY_RATE**",
+            "-query-burst **QUERY_BURST**",
+            "-datasets-rate **DATASETS_RATE**",
+            "-datasets-burst **DATASETS_BURST**"
+        ]
     },
     "parameters": {
         "AXIOM_TOKEN": {
             "type": "string",
             "required": true,
-            "description": "Axiom API token for authentication",
-            "argTemplate": "--token={value}"
+            "description": "Axiom API token for authentication"
         },
-        "AXIOM_URL": {
-            "type": "string",
+        "QUERY_RATE": {
+            "type": "number",
             "required": false,
-            "description": "Axiom API URL (defaults to https://api.axiom.co)",
-            "argTemplate": "--url={value}"
+            "default": 1,
+            "description": "Query rate limit"
         },
-        "AXIOM_ORG_ID": {
-            "type": "string",
-            "required": true,
-            "description": "Axiom Organization ID",
-            "argTemplate": "--org-id={value}"
-        }
-    },
-    "features": {
-        "tools": {
-            "queryApl": "Execute APL queries against Axiom datasets",
-            "listDatasets": "List available Axiom datasets"
+        "QUERY_BURST": {
+            "type": "number",
+            "required": false,
+            "default": 1,
+            "description": "Query burst limit"
         },
-        "configuration": {
-            "methods": ["config file", "environment variables", "command line flags"],
-            "rateLimiting": true
+        "DATASETS_RATE": {
+            "type": "number",
+            "required": false,
+            "default": 1,
+            "description": "Datasets rate limit"
         },
-        "license": "MIT",
-        "development": {
-            "status": "Active",
-            "language": "Go"
+        "DATASETS_BURST": {
+            "type": "number",
+            "required": false,
+            "default": 1,
+            "description": "Datasets burst limit"
         }
     }
 }

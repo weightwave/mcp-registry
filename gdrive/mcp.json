@@ -1,13 +1,20 @@
 {
     "id": "gdrive",
-    "name": "Google Drive Server",
     "title": "Google Drive",
     "description": "MCP server for Google Drive integration, providing file management and sharing capabilities",
     "tags": ["storage", "files", "google", "cloud"],
+    "categories": [
+        "Databases & Storage",
+        "Integration & Delivery"
+    ],
     "creator": "@modelcontextprotocol",
-    "logoUrl": "https://app.mcphub.net/server-configuration/image/gdrive.svg",
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/1/12/Google_Drive_icon_%282020%29.svg",
     "publishDate": "2024-01-17T00:00:00Z",
     "rating": 5,
+    "sources": {
+        "github": "https://github.com/modelcontextprotocol/servers/tree/main/src/gdrive",
+        "npm": "https://www.npmjs.com/package/@modelcontextprotocol/server-gdrive"
+    },
     "type": "stdio",
     "commandInfo": {
         "command": "npx",
@@ -36,18 +43,6 @@
             "required": true,
             "description": "Google OAuth 2.0 refresh token for long-term access",
             "argTemplate": "--refresh-token={value}"
-        }
-    },
-    "features": {
-        "capabilities": {
-            "files": ["list", "create", "delete", "update", "download", "upload"],
-            "folders": ["create", "delete", "list"],
-            "sharing": ["permissions", "links", "collaborate"],
-            "search": ["query", "filter"]
-        },
-        "integration": {
-            "sdk": "@modelcontextprotocol/sdk",
-            "version": "0.6.2"
         }
     }
 }

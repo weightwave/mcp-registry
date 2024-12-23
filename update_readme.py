@@ -35,7 +35,7 @@ def generate_markdown():
             "title": server_info['title'],
             "description": server_info['description'],
             "version": server_info.get('version', 'latest'),
-            "type": server_info.get('type', 'N/A'),
+            "type": server_info['type'],
             "command": command_info.get('command', ''),
             "args": command_info.get('args', [])
         }
