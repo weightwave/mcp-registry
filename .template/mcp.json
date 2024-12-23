@@ -4,6 +4,7 @@
     "title": "Airtable",
     "description": "MCP server for managing Airtable bases and tables with comprehensive API support for base, table, field, and record operations",
     "tags": ["database", "api", "tables", "records", "fields"],
+    "creator": "felores",
     "logoUrl": "https://app.mcphub.net/server-configuration/image/airtable.svg",
     "publishDate": "2024-01-17T00:00:00Z",
     "rating": 5,
