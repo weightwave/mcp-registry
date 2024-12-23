@@ -4,6 +4,10 @@
     "title": "GitHub",
     "description": "MCP server for using the GitHub API",
     "tags": ["git", "github", "api"],
+    "categories": [
+        "API Management",
+        "Developer Tools"
+    ],
     "creator": "Official",
     "verified": false,
     "logoUrl": "https://app.mcphub.net/server-configuration/image/github.svg",

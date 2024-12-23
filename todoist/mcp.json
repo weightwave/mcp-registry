@@ -5,6 +5,10 @@
     "tags": [
         "todoist"
     ],
+    "categories": [
+        "API Management",
+        "Content Management System"
+    ],
     "creator": "abhiz123",
     "logoUrl": "https://app.mcphub.net/server-configuration/image/todoist.svg",
     "publishDate": "2024-12-13T12:00:00Z",

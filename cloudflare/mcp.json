@@ -3,6 +3,10 @@
     "title": "Cloudflare",
     "description": "MCP server for Cloudflare API integration with support for DNS, Workers, and security services",
     "tags": ["cdn", "dns", "security", "workers"],
+    "categories": [
+        "Security",
+        "Networking"
+    ],
     "creator": "@cloudflare",
     "verified": false,
     "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Cloudflare_Logo.png/1200px-Cloudflare_Logo.png",

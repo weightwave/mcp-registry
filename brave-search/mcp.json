@@ -3,6 +3,10 @@
     "title": "Brave Search",
     "description": "MCP server for Brave Search API integration",
     "tags": ["search", "api"],
+    "categories": [
+        "API Management",
+        "Web Analytics"
+    ],
     "creator": "Official",
     "verified": false,
     "logoUrl": "https://app.mcphub.net/server-configuration/image/brave-search.svg",

@@ -4,6 +4,10 @@
     "title": "Home Assistant",
     "description": "MCP server for interacting with Home Assistant home automation platform, providing control over smart home devices and automation",
     "tags": ["home-automation", "iot", "smart-home", "automation"],
+    "categories": [
+        "Internet of Things",
+        "Integration & Delivery"
+    ],
     "creator": "allenporter",
     "logoUrl": "https://app.mcphub.net/server-configuration/image/home-assistant.svg",
     "publishDate": "2024-01-17T00:00:00Z",

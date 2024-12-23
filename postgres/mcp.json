@@ -4,6 +4,9 @@
     "title": "PostgreSQL",
     "description": "MCP server for PostgreSQL database operations with support for queries, transactions, and schema management",
     "tags": ["database", "sql", "postgresql", "relational"],
+    "categories": [
+        "Databases & Storage"
+    ],
     "creator": "@modelcontextprotocol",
     "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/1200px-Postgresql_elephant.svg.png",
     "publishDate": "2024-01-17T00:00:00Z",

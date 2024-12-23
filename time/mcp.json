@@ -5,6 +5,9 @@
     "tags": [
         "time"
     ],
+    "categories": [
+        "Developer Tools"
+    ],
     "creator": "@modelcontextprotocol",
     "verified": false,
     "logoUrl": "https://app.mcphub.net/server-configuration/image/time.svg",

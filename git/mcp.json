@@ -5,6 +5,9 @@
     "tags": [
         "git"
     ],
+    "categories": [
+        "Developer Tools"
+    ],
     "creator": "Official",
     "logoUrl": "https://app.mcphub.net/server-configuration/image/git.svg",
     "publishDate": "2024-12-08T18:00:00Z",

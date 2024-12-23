@@ -5,6 +5,10 @@
     "tags": [
         "twitter"
     ],
+    "categories": [
+        "API Management",
+        "Integration & Delivery"
+    ],
     "creator": "EnesCinr",
     "verified": false,
     "logoUrl": "https://app.mcphub.net/server-configuration/image/twitter-mcp.svg",

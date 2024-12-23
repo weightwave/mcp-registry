@@ -7,6 +7,9 @@
     "step-by-step",
     "problem solving"
   ],
+  "categories": [
+    "Developer Tools"
+  ],
   "creator": "@modelcontextprotocol",
   "verified": false,
   "logoUrl": "https://app.mcphub.net/server-configuration/image/sequential-thinking.svg",

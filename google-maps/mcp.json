@@ -4,6 +4,9 @@
     "title": "Google Maps",
     "description": "MCP server for using the Google Maps API",
     "tags": ["maps", "location", "api"],
+    "categories": [
+        "API Management"
+    ],
     "creator": "Official",
     "verified": false,
     "logoUrl": "https://app.mcphub.net/server-configuration/image/google-maps.svg",
