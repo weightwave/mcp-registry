@@ -1,0 +1,27 @@
+{
+  "id": "mcp-server-kubernetes",
+  "title": "Mcp-Server-Kubernetes",
+  "description": "MCP Server that connects to a Kubernetes cluster for managing pods, services, and deployments with support for kubectl integration.",
+  "tags": [
+    "Kubernetes",
+    "MCP Server",
+    "DevOps"
+  ],
+  "creator": "Flux159",
+  "logoUrl": "",
+  "publishDate": "2024-12-24T09:53:34Z",
+  "rating": 5,
+  "sources": {
+    "github": "https://github.com/Flux159/mcp-server-kubernetes"
+  },
+  "type": "stdio",
+  "commandInfo": {
+    "command": "npx",
+    "args": [
+      "mcp-server-kubernetes"
+    ],
+    "env": {}
+  },
+  "defVersion": "1",
+  "parameters": {}
+}
