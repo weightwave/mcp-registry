@@ -1,5 +1,5 @@
 {
-    "id": "slack-mcp-server",
+    "id": "slack-mcp-server-modelcontextprotocol",
     "title": "Slack MCP Server",
     "description": "Channel management and messaging capabilities",
     "tags": [

@@ -1,5 +1,5 @@
 {
-    "id": "postgres",
+    "id": "postgresql-modelcontextprotocol",
     "name": "PostgreSQL Server",
     "title": "PostgreSQL",
     "description": "MCP server for PostgreSQL database operations with support for queries, transactions, and schema management",

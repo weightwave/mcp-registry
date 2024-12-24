@@ -1,5 +1,5 @@
 {
-    "id": "github",
+    "id": "github-official",
     "name": "GitHub Server",
     "title": "GitHub",
     "description": "MCP server for using the GitHub API",

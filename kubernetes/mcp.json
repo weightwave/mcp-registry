@@ -1,5 +1,5 @@
 {
-    "id": "kubernetes",
+    "id": "kubernetes-flux159",
     "title": "Kubernetes",
     "description": "Connect to Kubernetes cluster and manage pods, deployments, and services.",
     "tags": [

@@ -1,5 +1,5 @@
 {
-    "id": "time-mcp-server",
+    "id": "time-mcp-server-modelcontextprotocol",
     "title": "Time MCP Server",
     "description": "Time and timezone conversion capabilities",
     "tags": [
