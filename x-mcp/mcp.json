@@ -1,0 +1,61 @@
+{
+  "id": "x-mcp",
+  "title": "X-Mcp",
+  "description": "An MCP server for creating, managing, and publishing X/Twitter posts through the Claude chat platform.",
+  "tags": [
+    "MCP",
+    "Twitter API",
+    "Node.js"
+  ],
+  "creator": "vidhupv",
+  "logoUrl": "",
+  "publishDate": "2024-12-24T10:03:26Z",
+  "rating": 5,
+  "sources": {
+    "github": "https://github.com/vidhupv/x-mcp"
+  },
+  "type": "stdio",
+  "commandInfo": {
+    "command": "uv",
+    "args": [
+      "--directory",
+      "**REPO_PATH**",
+      "run",
+      "x-mcp"
+    ],
+    "env": {
+      "TWITTER_API_KEY": "**TWITTER_API_KEY**",
+      "TWITTER_API_SECRET": "**TWITTER_API_SECRET**",
+      "TWITTER_ACCESS_TOKEN": "**TWITTER_ACCESS_TOKEN**",
+      "TWITTER_ACCESS_TOKEN_SECRET": "**TWITTER_ACCESS_TOKEN_SECRET**"
+    }
+  },
+  "defVersion": "1",
+  "parameters": {
+    "REPO_PATH": {
+      "type": "string",
+      "required": true,
+      "description": "The absolute path to the cloned x-mcp repository."
+    },
+    "TWITTER_API_KEY": {
+      "type": "string",
+      "required": true,
+      "description": "Your X/Twitter API Key to authenticate API calls."
+    },
+    "TWITTER_API_SECRET": {
+      "type": "string",
+      "required": true,
+      "description": "Your X/Twitter API Secret to authenticate API calls."
+    },
+    "TWITTER_ACCESS_TOKEN": {
+      "type": "string",
+      "required": true,
+      "description": "Your X/Twitter Access Token to manage account operations."
+    },
+    "TWITTER_ACCESS_TOKEN_SECRET": {
+      "type": "string",
+      "required": true,
+      "description": "Your X/Twitter Access Token Secret to manage account operations."
+    }
+  }
+}
