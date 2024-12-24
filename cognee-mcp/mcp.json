@@ -1,0 +1,74 @@
+{
+  "id": "cognee-mcp-server",
+  "title": "Cognee-Mcp-Server",
+  "description": "An MCP server for Cognee, an AI memory engine, designed for knowledge graph construction and search functionalities.",
+  "tags": [
+    "AI",
+    "MCP server",
+    "knowledge graph"
+  ],
+  "creator": "topoteretes",
+  "logoUrl": "",
+  "publishDate": "2024-12-24T10:11:16Z",
+  "rating": 5,
+  "sources": {
+    "github": "https://github.com/topoteretes/cognee-mcp-server"
+  },
+  "type": "stdio",
+  "commandInfo": {
+    "command": "uv",
+    "args": [
+      "--directory",
+      "/path/to/your/cognee-mcp-server",
+      "run",
+      "mcpcognee"
+    ],
+    "env": {
+      "ENV": "**ENV**",
+      "TOKENIZERS_PARALLELISM": "**TOKENIZERS_PARALLELISM**",
+      "LLM_API_KEY": "**LLM_API_KEY**",
+      "GRAPH_DATABASE_PROVIDER": "**GRAPH_DATABASE_PROVIDER**",
+      "VECTOR_DB_PROVIDER": "**VECTOR_DB_PROVIDER**",
+      "DB_PROVIDER": "**DB_PROVIDER**",
+      "DB_NAME": "**DB_NAME**"
+    }
+  },
+  "defVersion": "1",
+  "parameters": {
+    "ENV": {
+      "type": "string",
+      "required": true,
+      "description": "The environment in which the server is running (e.g., local)."
+    },
+    "TOKENIZERS_PARALLELISM": {
+      "type": "string",
+      "required": true,
+      "description": "Flag to enable or disable parallelism for tokenizers."
+    },
+    "LLM_API_KEY": {
+      "type": "string",
+      "required": true,
+      "description": "The API key for the large language model (LLM)."
+    },
+    "GRAPH_DATABASE_PROVIDER": {
+      "type": "string",
+      "required": true,
+      "description": "The provider for the graph database (e.g., networkx)."
+    },
+    "VECTOR_DB_PROVIDER": {
+      "type": "string",
+      "required": true,
+      "description": "The provider for the vector database (e.g., lancedb)."
+    },
+    "DB_PROVIDER": {
+      "type": "string",
+      "required": true,
+      "description": "The provider for the general database (e.g., sqlite)."
+    },
+    "DB_NAME": {
+      "type": "string",
+      "required": true,
+      "description": "The name of the database used for storing knowledge graph data."
+    }
+  }
+}
