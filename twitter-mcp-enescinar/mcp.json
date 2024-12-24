@@ -1,0 +1,54 @@
+{
+  "id": "twitter-mcp",
+  "title": "Twitter-Mcp",
+  "description": "This MCP server enables interaction with Twitter via API, supporting posting tweets and searching for tweets.",
+  "tags": [
+    "Twitter",
+    "MCP Server",
+    "API"
+  ],
+  "creator": "EnesCinr",
+  "logoUrl": "",
+  "publishDate": "2024-12-24T10:04:44Z",
+  "rating": 5,
+  "sources": {
+    "github": "https://github.com/EnesCinr/twitter-mcp"
+  },
+  "type": "stdio",
+  "commandInfo": {
+    "command": "npx",
+    "args": [
+      "-y",
+      "@enescinar/twitter-mcp"
+    ],
+    "env": {
+      "API_KEY": "**API_KEY**",
+      "API_SECRET_KEY": "**API_SECRET_KEY**",
+      "ACCESS_TOKEN": "**ACCESS_TOKEN**",
+      "ACCESS_TOKEN_SECRET": "**ACCESS_TOKEN_SECRET**"
+    }
+  },
+  "defVersion": "1",
+  "parameters": {
+    "API_KEY": {
+      "type": "string",
+      "required": true,
+      "description": "The API key for accessing the Twitter API."
+    },
+    "API_SECRET_KEY": {
+      "type": "string",
+      "required": true,
+      "description": "The API secret key for accessing the Twitter API."
+    },
+    "ACCESS_TOKEN": {
+      "type": "string",
+      "required": true,
+      "description": "The access token for authenticating Twitter API requests."
+    },
+    "ACCESS_TOKEN_SECRET": {
+      "type": "string",
+      "required": true,
+      "description": "The access token secret for authenticating Twitter API requests."
+    }
+  }
+}
