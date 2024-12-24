@@ -1,0 +1,41 @@
+{
+  "id": "gtasks-mcp",
+  "title": "Gtasks-Mcp",
+  "description": "This MCP server integrates with Google Tasks, enabling operations like listing, searching, creating, updating, and deleting tasks via its tools and resources.",
+  "tags": [
+    "Google Tasks",
+    "API",
+    "MCP Server"
+  ],
+  "creator": "zcaceres",
+  "logoUrl": "",
+  "publishDate": "2024-12-24T10:20:33Z",
+  "rating": 5,
+  "sources": {
+    "github": "https://github.com/zcaceres/gtasks-mcp"
+  },
+  "type": "stdio",
+  "commandInfo": {
+    "command": "node",
+    "args": [
+      "dist/index.js"
+    ],
+    "env": {
+      "GOOGLE_TASKS_API_SCOPES": "**GOOGLE_TASKS_API_SCOPES**",
+      "GCP_OAUTH_KEYS_FILE": "**GCP_OAUTH_KEYS_FILE**"
+    }
+  },
+  "defVersion": "1",
+  "parameters": {
+    "GOOGLE_TASKS_API_SCOPES": {
+      "type": "string",
+      "required": true,
+      "description": "Google Tasks API scopes required for authentication."
+    },
+    "GCP_OAUTH_KEYS_FILE": {
+      "type": "string",
+      "required": true,
+      "description": "Path to the JSON file containing OAuth client keys."
+    }
+  }
+}
