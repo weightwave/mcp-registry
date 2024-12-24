@@ -1,0 +1,38 @@
+{
+  "id": "alphavantage",
+  "title": "Alphavantage",
+  "description": "A MCP server to fetch stock market data using the Alphavantage API.",
+  "tags": [
+    "MCP server",
+    "Alphavantage",
+    "API"
+  ],
+  "creator": "calvernaz",
+  "logoUrl": "",
+  "publishDate": "2024-12-24T09:51:06Z",
+  "rating": 5,
+  "sources": {
+    "github": "https://github.com/calvernaz/alphavantage"
+  },
+  "type": "stdio",
+  "commandInfo": {
+    "command": "uv",
+    "args": [
+      "--directory",
+      "<DIRECTORY>/alphavantage",
+      "run",
+      "alphavantage"
+    ],
+    "env": {
+      "ALPHAVANTAGE_API_KEY": "**ALPHAVANTAGE_API_KEY**"
+    }
+  },
+  "defVersion": "1",
+  "parameters": {
+    "ALPHAVANTAGE_API_KEY": {
+      "type": "string",
+      "required": true,
+      "description": "The API key required to authenticate requests to the Alphavantage API."
+    }
+  }
+}
