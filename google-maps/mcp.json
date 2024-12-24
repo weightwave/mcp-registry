@@ -1,5 +1,5 @@
 {
-    "id": "google-maps",
+    "id": "google-maps-official",
     "name": "Google Maps Server",
     "title": "Google Maps",
     "description": "MCP server for using the Google Maps API",

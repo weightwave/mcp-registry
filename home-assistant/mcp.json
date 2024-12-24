@@ -1,5 +1,5 @@
 {
-    "id": "home-assistant",
+    "id": "home-assistant-allenporter",
     "name": "Home Assistant Server",
     "title": "Home Assistant",
     "description": "MCP server for interacting with Home Assistant home automation platform, providing control over smart home devices and automation",

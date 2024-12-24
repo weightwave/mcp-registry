@@ -1,5 +1,5 @@
 {
-    "id": "mcp-pandoc",
+    "id": "mcp-pandoc-vivekvells",
     "title": "MCP Pandoc",
     "description": "MCP server for seamless document format conversion using Pandoc, supporting Markdown, HTML, and plain text, with other formats like PDF, csv and docx in development.",
     "tags": [

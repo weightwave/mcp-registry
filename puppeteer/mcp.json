@@ -1,5 +1,5 @@
 {
-  "id": "puppeteer",
+  "id": "puppeteer-server-modelcontextprotocol",
   "title": "Puppeteer Server",
   "description": "Browser automation server using Puppeteer",
   "tags": [
