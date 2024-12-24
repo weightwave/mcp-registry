@@ -1,5 +1,5 @@
 {
-  "id": "fetch",
+  "id": "fetch-server-official",
   "title": "Fetch Server",
   "description": "HTTP request server for making API calls",
   "tags": [

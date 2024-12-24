@@ -1,5 +1,5 @@
 {
-    "id": "axiom",
+    "id": "axiom-axiomhq",
     "title": "Axiom",
     "description": "MCP server for querying data using Axiom Processing Language (APL) with support for dataset operations and APL queries",
     "tags": ["database", "query", "apl", "datasets"],

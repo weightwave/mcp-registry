@@ -1,5 +1,5 @@
 {
-    "id": "aws-kb-retrieval",
+    "id": "aws-kb-retrieval-official",
     "title": "AWS KB Retrieval",
     "description": "Retrieval from AWS Knowledge Base using Bedrock Agent Runtime",
     "tags": [

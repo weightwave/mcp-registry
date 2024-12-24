@@ -1,5 +1,5 @@
 {
-    "id": "gdrive",
+    "id": "google-drive-modelcontextprotocol",
     "title": "Google Drive",
     "description": "MCP server for Google Drive integration, providing file management and sharing capabilities",
     "tags": ["storage", "files", "google", "cloud"],
