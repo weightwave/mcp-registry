@@ -1,0 +1,31 @@
+{
+  "id": "mcp-obsidian",
+  "title": "Mcp-Obsidian",
+  "description": "A connector to allow Claude Desktop or any MCP client to read and search Markdown notes, such as those in an Obsidian vault.",
+  "tags": [
+    "Markdown",
+    "Obsidian",
+    "MCP"
+  ],
+  "creator": "calclavia",
+  "logoUrl": "",
+  "publishDate": "2024-12-24T09:14:17Z",
+  "rating": 5,
+  "sources": {
+    "github": "https://github.com/calclavia/mcp-obsidian"
+  },
+  "type": "stdio",
+  "commandInfo": {
+    "command": "npx",
+    "args": [
+      "@smithery/cli",
+      "install",
+      "mcp-obsidian",
+      "--client",
+      "claude"
+    ],
+    "env": {}
+  },
+  "defVersion": "1",
+  "parameters": {}
+}
