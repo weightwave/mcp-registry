@@ -1,6 +1,5 @@
 {
-    "id": "google-maps-official",
-    "name": "Google Maps Server",
+    "id": "google-maps-modelcontextprotocol",
     "title": "Google Maps",
     "description": "MCP server for using the Google Maps API",
     "tags": ["maps", "location", "api"],
