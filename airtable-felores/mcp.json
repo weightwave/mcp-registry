@@ -1,6 +1,5 @@
 {
     "id": "airtable-felores",
-    "name": "Airtable Server",
     "title": "Airtable",
     "description": "MCP server for managing Airtable bases and tables with comprehensive API support for base, table, field, and record operations",
     "tags": ["database", "api", "tables", "records", "fields"],

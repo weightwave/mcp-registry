@@ -1,6 +1,5 @@
 {
-    "id": "mongodb-kiliczsh",
-    "name": "MongoDB Server",
+    "id": "mcp-mongo-server-kiliczsh",
     "title": "MongoDB",
     "description": "MCP server for executing MongoDB queries and managing MongoDB databases with local connection support",
     "tags": ["database", "query", "nosql", "mongodb"],

@@ -1,6 +1,6 @@
 {
-  "id": "flightradar24-mcp-server",
-  "title": "Flightradar24-Mcp-Server",
+  "id": "flightradar24-mcp-server-sunsetcoder",
+  "title": "Flightradar24",
   "description": "A Claude Desktop MCP server to track flights in real-time using Flightradar24 data.",
   "tags": [
     "Claude Desktop",

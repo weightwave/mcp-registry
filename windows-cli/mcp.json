@@ -1,6 +1,6 @@
 {
     "id": "windows-cli-mcp-server-simonb97",
-    "title": "Windows CLI MCP Server",
+    "title": "Windows CLI",
     "description": "MCP server for secure command-line interactions on Windows systems, enabling controlled access to PowerShell, CMD, and Git Bash shells.",
     "tags": [
         "windows"

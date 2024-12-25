@@ -1,5 +1,5 @@
 {
-    "id": "aws-kb-retrieval-official",
+    "id": "aws-kb-retrieval-modelcontextprotocol",
     "title": "AWS KB Retrieval",
     "description": "Retrieval from AWS Knowledge Base using Bedrock Agent Runtime",
     "tags": [
@@ -9,7 +9,7 @@
         "Data Science",
         "API Management"
     ],
-    "creator": "Official",
+    "creator": "modelcontextprotocol",
     "verified": false,
     "logoUrl": "https://app.mcphub.net/server-configuration/image/aws-kb-retrieval.svg",
     "publishDate": "2024-12-13T12:00:00Z",

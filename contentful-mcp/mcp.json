@@ -1,6 +1,6 @@
 {
-  "id": "contentful-mcp",
-  "title": "Contentful-Mcp",
+  "id": "contentful-mcp-ivo-toby",
+  "title": "Contentful",
   "description": "An MCP server for managing Contentful's content and spaces, designed for integration with Claude Desktop or other MCP-compatible tools.",
   "tags": [
     "Contentful",

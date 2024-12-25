@@ -1,7 +1,7 @@
 {
-    "id": "slack-mcp-server-modelcontextprotocol",
-    "title": "Slack MCP Server",
-    "description": "Channel management and messaging capabilities",
+    "id": "slack-modelcontextprotocol",
+    "title": "Slack",
+    "description": "MCP Server for the Slack API, enabling Claude to interact with Slack workspaces.",
     "tags": [
         "slack"
     ],

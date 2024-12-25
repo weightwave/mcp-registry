@@ -1,6 +1,6 @@
 {
-  "id": "openapi-mcp-server",
-  "title": "Openapi-Mcp-Server",
+  "id": "openapi-mcp-server-snaggle-ai",
+  "title": "OpenAPI",
   "description": "An OpenAPI MCP server that acts as a proxy for OpenAPI v3.1-compliant APIs, enabling seamless interaction with APIs through Claude Desktop.",
   "tags": [
     "OpenAPI",

@@ -1,7 +1,7 @@
 {
-  "id": "mcp-neo4j",
-  "title": "Mcp-Neo4J",
-  "description": "MCP (Model Context Protocol) servers for interacting with Neo4j and Aura accounts using natural language to create and query knowledge graphs.",
+  "id": "mcp-neo4j-neo4j-contrib",
+  "title": "Neo4J",
+  "description": "MCP servers for interacting with Neo4j and Aura accounts using natural language to create and query knowledge graphs.",
   "tags": [
     "Neo4j",
     "MCP",

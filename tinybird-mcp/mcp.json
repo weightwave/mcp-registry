@@ -1,6 +1,6 @@
 {
-  "id": "mcp-tinybird",
-  "title": "Mcp-Tinybird",
+  "id": "mcp-tinybird-tinybirdco",
+  "title": "Tinybird",
   "description": "An MCP server that interacts with a Tinybird Workspace, providing data querying, pushing, and analytics capabilities.",
   "tags": [
     "Tinybird",

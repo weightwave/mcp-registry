@@ -1,6 +1,6 @@
 {
-  "id": "exa-mcp-server",
-  "title": "Exa-Mcp-Server",
+  "id": "exa-mcp-server-exa-labs",
+  "title": "Exa",
   "description": "The Exa MCP Server enables AI assistants, such as Claude Desktop, to perform web searches using the Exa AI Search API, providing structured and real-time information in a controlled environment.",
   "tags": [
     "AI",
@@ -18,7 +18,8 @@
   "commandInfo": {
     "command": "npx",
     "args": [
-      "/path/to/exa-mcp-server/build/index.js"
+      "-y",
+      "exa-mcp-server"
     ],
     "env": {
       "EXA_API_KEY": "**EXA_API_KEY**"

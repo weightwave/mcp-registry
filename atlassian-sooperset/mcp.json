@@ -1,6 +1,6 @@
 {
-  "id": "mcp-atlassian",
-  "title": "Mcp-Atlassian",
+  "id": "atlassian-sooperset",
+  "title": "Atlassian",
   "description": "MCP Atlassian is a Model Context Protocol server for integrating with Atlassian Cloud products such as Confluence and Jira, providing tools for searching, accessing, and managing content and issues.",
   "tags": [
     "Atlassian",

@@ -1,6 +1,6 @@
 {
-  "id": "mcp-hfspace",
-  "title": "Mcp-Hfspace",
+  "id": "mcp-hfspace-evalstate",
+  "title": "Hfspace",
   "description": "A minimal setup MCP server for integrating Hugging Face Spaces with Claude Desktop, enabling tasks like image generation, text-to-speech, and speech-to-text.",
   "tags": [
     "Hugging Face Spaces",
@@ -20,20 +20,12 @@
     "args": [
       "-y",
       "@llmindset/mcp-hfspace",
-      "--work-dir=**MCP_HF_WORK_DIR**",
-      "--HF_TOKEN=**HF_TOKEN**"
-    ],
-    "env": {
-      "HF_TOKEN": "**HF_TOKEN**"
-    }
+      "--work-dir=~/mcp-files/",
+      "--HF_TOKEN = HF_**HF_TOKEN**"
+    ]
   },
   "defVersion": "1",
   "parameters": {
-    "MCP_HF_WORK_DIR": {
-      "type": "string",
-      "required": true,
-      "description": "Directory for handling uploads and downloads of files including images and audio."
-    },
     "HF_TOKEN": {
       "type": "string",
       "required": true,

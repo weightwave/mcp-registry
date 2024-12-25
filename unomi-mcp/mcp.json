@@ -1,6 +1,6 @@
 {
-  "id": "inoyu-mcp-unomi-server",
-  "title": "Inoyu-Mcp-Unomi-Server",
+  "id": "inoyu-mcp-unomi-server-sergehuber",
+  "title": "Inoyu Apache Unomi",
   "description": "An MCP server for integrating Claude Desktop with Apache Unomi, enabling user context management through profile lookup, creation, and updates.",
   "tags": [
     "MCP",

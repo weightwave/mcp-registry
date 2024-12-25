@@ -1,6 +1,6 @@
 {
-  "id": "mcp-server-raygun",
-  "title": "Mcp-Server-Raygun",
+  "id": "mcp-server-raygun-MindscapeHQ",
+  "title": "Raygun",
   "description": "MCP Server for Raygun API V3 providing endpoints for crash reporting, real user monitoring, and performance monitoring.",
   "tags": [
     "Raygun",

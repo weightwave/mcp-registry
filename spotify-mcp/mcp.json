@@ -1,6 +1,6 @@
 {
-  "id": "spotify-mcp",
-  "title": "Spotify-Mcp",
+  "id": "spotify-mcp-varunneal",
+  "title": "Spotify",
   "description": "MCP server for integrating Claude with Spotify, enabling control over playback, search, and Spotify queue management.",
   "tags": [
     "Spotify",

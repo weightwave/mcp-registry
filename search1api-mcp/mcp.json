@@ -1,6 +1,6 @@
 {
-  "id": "search1api-mcp",
-  "title": "Search1Api-Mcp",
+  "id": "search1api-mcp-fatwang2",
+  "title": "Search1Api",
   "description": "An MCP server for searching the web, retrieving news, crawling website content, and extracting sitemaps, integrated with Claude Desktop.",
   "tags": [
     "MCP",

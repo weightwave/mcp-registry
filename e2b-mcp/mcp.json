@@ -1,6 +1,6 @@
 {
-  "id": "mcp-server",
-  "title": "Mcp-Server",
+  "id": "mcp-server-e2b-dev",
+  "title": "E2B",
   "description": "The E2B MCP server enables code interpreting capabilities for Claude Desktop apps through the E2B Sandbox.",
   "tags": [
     "JavaScript",

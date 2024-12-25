@@ -1,5 +1,5 @@
 {
-    "id": "cloudflare-cloudflare",
+    "id": "mcp-server-cloudflare-cloudflare",
     "title": "Cloudflare",
     "description": "MCP server for Cloudflare API integration with support for DNS, Workers, and security services",
     "tags": ["cdn", "dns", "security", "workers"],
@@ -7,7 +7,7 @@
         "Security",
         "Networking"
     ],
-    "creator": "@cloudflare",
+    "creator": "cloudflare",
     "verified": false,
     "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Cloudflare_Logo.png/1200px-Cloudflare_Logo.png",
     "publishDate": "2024-01-17T00:00:00Z",

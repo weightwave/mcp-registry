@@ -1,7 +1,7 @@
 {
-  "id": "mcp-server-mysql",
-  "title": "Mcp-Server-Mysql",
-  "description": "A Model Context Protocol (MCP) server for providing read-only access to MySQL databases, enabling schema inspection and query execution.",
+  "id": "mcp-server-mysql-benborla",
+  "title": "Mysql",
+  "description": "MCP server for providing read-only access to MySQL databases, enabling schema inspection and query execution.",
   "tags": [
     "NodeJS",
     "MySQL",

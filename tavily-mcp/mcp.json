@@ -1,6 +1,6 @@
 {
-  "id": "mcp-tavily",
-  "title": "Mcp-Tavily",
+  "id": "mcp-tavily-RamXX",
+  "title": "Tavily",
   "description": "A Model Context Protocol server enabling AI-powered web searches, direct Q&A, and recent news retrieval using Tavily's API.",
   "tags": [
     "AI",

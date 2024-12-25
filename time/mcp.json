@@ -1,6 +1,6 @@
 {
-    "id": "time-mcp-server-modelcontextprotocol",
-    "title": "Time MCP Server",
+    "id": "time-modelcontextprotocol",
+    "title": "Time",
     "description": "Time and timezone conversion capabilities",
     "tags": [
         "time"
@@ -8,7 +8,7 @@
     "categories": [
         "Developer Tools"
     ],
-    "creator": "@modelcontextprotocol",
+    "creator": "modelcontextprotocol",
     "verified": false,
     "logoUrl": "https://app.mcphub.net/server-configuration/image/time.svg",
     "publishDate": "2024-12-13T12:00:00Z",

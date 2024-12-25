@@ -1,11 +1,10 @@
 {
-  "id": "openrpc-mpc-server",
-  "title": "Openrpc-Mpc-Server",
+  "id": "openrpc-mpc-server-shanejonas",
+  "title": "OpenRPC",
   "description": "An OpenRPC MCP server that enables JSON-RPC functionality, supporting arbitrary method calls and method discovery.",
   "tags": [
     "OpenRPC",
-    "JSON-RPC",
-    "MCP"
+    "JSON-RPC"
   ],
   "creator": "shanejonas",
   "logoUrl": "",

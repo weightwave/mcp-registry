@@ -1,6 +1,6 @@
 {
-  "id": "mcp-pinecone",
-  "title": "Mcp-Pinecone",
+  "id": "mcp-pinecone-sirmews",
+  "title": "Pinecone",
   "description": "A server to integrate Pinecone index read and write operations in Claude Desktop utilizing semantic search and embedding functionalities.",
   "tags": [
     "Pinecone",

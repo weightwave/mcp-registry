@@ -1,6 +1,6 @@
 {
   "id": "mcp-server-browserbase",
-  "title": "Mcp-Server-Browserbase",
+  "title": "Mcp Server Browserbase",
   "description": "This project provides a cloud-based browser automation MCP server using Browserbase, Puppeteer, and Stagehand, enabling AI models to interact with web pages and execute JavaScript.",
   "tags": [
     "MCP",

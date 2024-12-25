@@ -1,6 +1,6 @@
 {
-  "id": "mcp-notion-server",
-  "title": "Mcp-Notion-Server",
+  "id": "mcp-notion-server-suekou",
+  "title": "Notion",
   "description": "MCP Server for the Notion API, allowing Claude to interact with Notion workspaces.",
   "tags": [
     "Notion",

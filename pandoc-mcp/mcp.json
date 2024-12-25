@@ -1,10 +1,10 @@
 {
-  "id": "mcp-pandoc",
-  "title": "Mcp-Pandoc",
-  "description": "A Model Context Protocol server for converting documents between various formats using pandoc, currently supporting plain text, Markdown, and HTML.",
+  "id": "mcp-pandoc-vivekVells",
+  "title": "Pandoc",
+  "description": "A MCP server for converting documents between various formats using pandoc, currently supporting plain text, Markdown, and HTML.",
   "tags": [
     "MCP",
-    "document-conversion",
+    "document conversion",
     "pandoc"
   ],
   "creator": "vivekVells",

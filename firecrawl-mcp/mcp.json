@@ -1,6 +1,6 @@
 {
-  "id": "mcp-server-firecrawl",
-  "title": "Mcp-Server-Firecrawl",
+  "id": "mcp-server-firecrawl-vrknetha",
+  "title": "Firecrawl",
   "description": "An MCP server implementation integrating with FireCrawl for advanced web scraping capabilities.",
   "tags": [
     "web scraping",

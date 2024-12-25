@@ -1,6 +1,6 @@
 {
-  "id": "mcp-server-rememberizer",
-  "title": "Mcp-Server-Rememberizer",
+  "id": "mcp-server-rememberizer-skydeckai",
+  "title": "Rememberizer",
   "description": "An MCP (Model Context Protocol) server enabling Large Language Models to interact with Rememberizer's document and knowledge management API for search, retrieval, and integration management.",
   "tags": [
     "MCP",

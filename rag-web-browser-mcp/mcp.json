@@ -1,6 +1,6 @@
 {
-  "id": "mcp-server-rag-web-browser",
-  "title": "Mcp-Server-Rag-Web-Browser",
+  "id": "mcp-server-rag-web-browser-apify",
+  "title": "RAG Web Browser",
   "description": "MCP server for the RAG Web Browser Actor, allowing AI assistants to perform web searches and fetch cleaned web content.",
   "tags": [
     "MCP",

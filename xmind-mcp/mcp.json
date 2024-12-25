@@ -1,10 +1,10 @@
 {
-  "id": "mcp-xmind",
-  "title": "Mcp-Xmind",
+  "id": "mcp-xmind-apeyroux",
+  "title": "Xmind",
   "description": "A server for analyzing and querying XMind mind maps with powerful features like fuzzy search, hierarchical navigation, and task tracking.",
   "tags": [
     "XMind",
-    "mind-maps",
+    "mind maps",
     "analysis"
   ],
   "creator": "apeyroux",

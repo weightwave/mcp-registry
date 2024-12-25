@@ -1,6 +1,6 @@
 {
-  "id": "mcp-bigquery-server",
-  "title": "Mcp-Bigquery-Server",
+  "id": "mcp-bigquery-server-ergut",
+  "title": "BigQuery",
   "description": "A server that enables secure and efficient communication between Claude Desktop and BigQuery, allowing users to query data in plain English without writing SQL.",
   "tags": [
     "BigQuery",

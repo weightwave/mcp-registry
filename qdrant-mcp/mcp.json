@@ -1,6 +1,6 @@
 {
-  "id": "mcp-server-qdrant",
-  "title": "Mcp-Server-Qdrant",
+  "id": "mcp-server-qdrant-qdrant",
+  "title": "Qdrant",
   "description": "A Model Context Protocol (MCP) server for interacting with the Qdrant vector search engine, providing semantic memory storage and retrieval functionality.",
   "tags": [
     "MCP",

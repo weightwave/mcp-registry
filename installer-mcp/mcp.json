@@ -1,6 +1,6 @@
 {
-  "id": "mcp-installer",
-  "title": "Mcp-Installer",
+  "id": "mcp-installer-anaisbetts",
+  "title": "Mcp Installer",
   "description": "mcp-installer is a server that simplifies the installation of other MCP servers using commands executed via npx for Node.js or uv for Python environments.",
   "tags": [
     "MCP",
