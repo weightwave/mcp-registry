@@ -1,6 +1,6 @@
 {
-  "id": "sequential-thinking-server-modelcontextprotocol",
-  "title": "Sequential Thinking Server",
+  "id": "server-sequential-thinking-modelcontextprotocol",
+  "title": "Sequential Thinking",
   "description": "Sequential thinking server for step-by-step reasoning",
   "tags": [
     "reasoning",
@@ -10,7 +10,7 @@
   "categories": [
     "Developer Tools"
   ],
-  "creator": "@modelcontextprotocol",
+  "creator": "modelcontextprotocol",
   "verified": false,
   "logoUrl": "https://app.mcphub.net/server-configuration/image/sequential-thinking.svg",
   "publishDate": "2024-12-17T12:49:12Z",

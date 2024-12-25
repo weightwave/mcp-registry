@@ -1,5 +1,5 @@
 {
-    "id": "axiom-axiomhq",
+    "id": "mcp-server-axiom-axiomhq",
     "title": "Axiom",
     "description": "MCP server for querying data using Axiom Processing Language (APL) with support for dataset operations and APL queries",
     "tags": ["database", "query", "apl", "datasets"],
@@ -13,8 +13,7 @@
     "publishDate": "2024-01-17T00:00:00Z",
     "rating": 5,
     "sources": {
-        "github": "https://github.com/axiomhq/axiom-mcp",
-        "npm": "https://www.npmjs.com/package/axiom-mcp"
+        "github": "https://github.com/axiomhq/mcp-server-axiom"
     },
     "type": "stdio",
     "commandInfo": {
