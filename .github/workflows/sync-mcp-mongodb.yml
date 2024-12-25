@@ -35,7 +35,7 @@ jobs:
       - name: Sync changed MCP files to MongoDB
         if: steps.changed-files.outputs.any_changed == 'true'
         env:
-          MONGODB_URI: mongodb+srv://admin:${{ secrets.MONGODB_PASSWORD }}@mcp.mongodb.net/?retryWrites=true&w=majority
+          MONGODB_URI: "mongodb+srv://admin:${{ secrets.MONGODB_PASSWORD }}@mcp.pcnej.mongodb.net/?retryWrites=true&w=majority&appName=mcp"
         run: |
           # Process added files
           if [[ -n "${{ steps.changed-files.outputs.added_files }}" ]]; then

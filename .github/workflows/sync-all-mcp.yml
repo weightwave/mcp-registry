@@ -20,5 +20,5 @@ jobs:
 
       - name: Run sync script
         env:
-          MONGODB_URI: mongodb+srv://admin:${{ secrets.MONGODB_PASSWORD }}@mcp.mongodb.net/?retryWrites=true&w=majority
+          MONGODB_URI: mongodb+srv://admin:${{ secrets.MONGODB_PASSWORD }}@mcp.pcnej.mongodb.net/?retryWrites=true&w=majority&appName=mcp
         run: node scripts/sync-all-to-mongodb.js
