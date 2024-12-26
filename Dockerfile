@@ -1,16 +1,16 @@
 # Stage 1: Development dependencies
-FROM node:18-alpine AS deps
+FROM node:18 AS deps
 WORKDIR /app
 COPY package*.json ./
 RUN npm install
 
 # Stage 2: Production build
-FROM node:18-alpine AS runner
+FROM node:18 AS runner
 WORKDIR /app
 
 # Create a non-root user
-RUN addgroup -g 1001 -S nodejs
-RUN adduser -S nodeuser -u 1001
+RUN groupadd -g 1001 nodejs
+RUN useradd -u 1001 -g nodejs -s /bin/bash nodeuser
 
 # Copy only necessary files
 COPY --from=deps /app/node_modules ./node_modules
@@ -34,4 +34,4 @@ HEALTHCHECK --interval=30s --timeout=3s \
   CMD wget --no-verbose --tries=1 --spider http://localhost:3000/ || exit 1
 
 # Start the server
-CMD ["node", "server.js"]
+CMD ["node", "server.mjs"]

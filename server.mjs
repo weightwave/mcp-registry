@@ -1,12 +1,40 @@
-const fastify = require('fastify')({ logger: true });
-const cors = require('@fastify/cors');
-const fs = require('fs').promises;
-const path = require('path');
+import dotenv from 'dotenv';
+import Fastify from 'fastify';
+import cors from '@fastify/cors';
+import { promises as fs } from 'fs';
+import path from 'path';
+import pkg from 'pg';
+const { Pool } = pkg;
+import TextEncoder from './encoder.mjs';
+
+dotenv.config();
+
+const fastify = Fastify({ logger: true });
 
 const PORT = process.env.PORT || 3000;
+const DATABASE_URL = "postgresql://postgres.yvmhnuuzfilsiyilrwtl:7xBXZhysR4R1Vgsi@aws-0-us-west-1.pooler.supabase.com:5432/postgres";
+
+// Create a global database pool
+const pool = new Pool({
+  connectionString: DATABASE_URL,
+  max: 20, // Maximum number of clients in the pool
+  idleTimeoutMillis: 30000, // Close idle clients after 30 seconds
+  connectionTimeoutMillis: 2000, // Return an error after 2 seconds if connection could not be established
+});
+
+// Add pool error handler
+pool.on('error', (err, client) => {
+  console.error('Unexpected error on idle client', err);
+});
+
+
+const { toEmbedding } = TextEncoder();
+fastify.decorate('toEmbedding', text => toEmbedding(text));
 
 // Register CORS
 fastify.register(cors);
+// Decorate fastify with our db pool
+fastify.decorate('db', pool);
 
 // Load registry from directories recursively
 async function scanDirectory(dir, registry = [], prefix = '') {
@@ -46,7 +74,7 @@ async function scanDirectory(dir, registry = [], prefix = '') {
 
 async function loadRegistry() {
     try {
-        return await scanDirectory('.');
+        return await scanDirectory('./servers');
     } catch (err) {
         console.error('Error loading registry:', err);
         return [];
@@ -112,6 +140,62 @@ fastify.get('/registry/:id', async (request, reply) => {
     } catch (err) {
         reply.code(500);
         return { error: 'Failed to get MCP' };
+    }
+});
+
+// Test database connection
+fastify.get('/db-test', async (request, reply) => {
+  try {
+    const { rows } = await fastify.db.query('SELECT NOW()');
+    return { success: true, timestamp: rows[0].now };
+  } catch (error) {
+    fastify.log.error(error);
+    return reply.status(500).send({ error: 'Database connection failed' });
+  }
+});
+
+fastify.get('/recommend', async (request, reply) => {
+    try {
+        const { description } = request.query;
+
+        if (!description) {
+            return reply.status(400).send({ error: 'Description is required' });
+        }
+
+        // encode description to vector
+        const embedding = await fastify.toEmbedding(description);
+        
+        // Format the embedding array for PostgreSQL vector type
+        const vectorString = `[${Array.from(embedding).join(',')}]`;
+        
+        try {
+            // Search for similar servers using vector similarity
+            const { rows } = await pool.query(`
+                SELECT 
+                    server_id,
+                    name,
+                    description,
+                    github_url,
+                    1 - (embedding <=> $1::vector) as similarity
+                FROM mcp_servers
+                WHERE embedding IS NOT NULL
+                ORDER BY embedding <=> $1::vector
+                LIMIT $2
+            `, [vectorString, 3]);  // limiting to top 3 results
+
+            return rows.map(row => ({
+                server_id: row.server_id,
+                description: row.description,
+                github_url: row.github_url,
+                similarity: parseFloat(row.similarity.toFixed(4))
+            }));
+        } catch (dbErr) {
+            fastify.log.error('Database error:', dbErr);
+            throw dbErr;
+        }
+    } catch (err) { 
+        fastify.log.error(err);
+        return reply.status(500).send({ error: 'Recommendation failed' });
     }
 });
 
