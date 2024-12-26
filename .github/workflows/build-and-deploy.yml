@@ -36,7 +36,12 @@ jobs:
           node-version: '18'
 
       - name: Install Dependencies
-        run: npm ci
+        run: |
+          if [ ! -f "package-lock.json" ]; then
+            npm install
+          else
+            npm ci
+          fi
 
       - name: Login to Aliyun Registry
         uses: docker/login-action@v3
