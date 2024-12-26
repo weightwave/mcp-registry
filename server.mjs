@@ -12,7 +12,7 @@ dotenv.config();
 const fastify = Fastify({ logger: true });
 
 const PORT = process.env.PORT || 3000;
-const DATABASE_URL = "postgresql://postgres.yvmhnuuzfilsiyilrwtl:7xBXZhysR4R1Vgsi@aws-0-us-west-1.pooler.supabase.com:5432/postgres";
+const DATABASE_URL = `postgresql://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`;
 
 // Create a global database pool
 const pool = new Pool({
@@ -22,11 +22,28 @@ const pool = new Pool({
   connectionTimeoutMillis: 2000, // Return an error after 2 seconds if connection could not be established
 });
 
-// Add pool error handler
+// Add pool error handlers
 pool.on('error', (err, client) => {
   console.error('Unexpected error on idle client', err);
 });
 
+pool.on('connect', () => {
+  console.log('Database connected successfully');
+});
+
+// Test database connection on startup
+const testConnection = async () => {
+  try {
+    const client = await pool.connect();
+    console.log('Database connection test successful');
+    client.release();
+  } catch (err) {
+    console.error('Error connecting to the database:', err);
+    process.exit(1); // Exit if we can't connect to database
+  }
+};
+
+testConnection();
 
 const { toEmbedding } = TextEncoder();
 fastify.decorate('toEmbedding', text => toEmbedding(text));
