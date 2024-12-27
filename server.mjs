@@ -10,7 +10,6 @@ import TextEncoder from './encoder.mjs';
 dotenv.config();
 
 const fastify = Fastify({ logger: true });
-
 const PORT = process.env.PORT || 3000;
 const DATABASE_URL = `postgresql://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`;
 
@@ -190,7 +189,7 @@ fastify.get('/recommend', async (request, reply) => {
             const { rows } = await pool.query(`
                 SELECT 
                     server_id,
-                    name,
+                    title,
                     description,
                     github_url,
                     1 - (embedding <=> $1::vector) as similarity
@@ -202,6 +201,7 @@ fastify.get('/recommend', async (request, reply) => {
 
             return rows.map(row => ({
                 server_id: row.server_id,
+                title: row.title,
                 description: row.description,
                 github_url: row.github_url,
                 similarity: parseFloat(row.similarity.toFixed(4))
