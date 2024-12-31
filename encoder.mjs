@@ -19,17 +19,27 @@ const TextEncoder = () => {
 
   const toEmbedding = async (text) => {
     await init();
-    
     const input = Array.isArray(text) ? text : [text];
     const embeddings = await model(input, { pooling: 'mean', normalize: true });
     
     return Array.isArray(text) ? embeddings : embeddings[0];
   };
 
-
+  const toEmbeddingOpenAI = async (text) => {
+    await init();
+    const input = Array.isArray(text) ? text : [text];
+    const response = await openai.embeddings.create({
+      model: 'text-embedding-3-small',
+      input
+    });
+    
+    const embeddings = response.data.map(item => item.embedding);
+    return Array.isArray(text) ? embeddings : embeddings[0];
+  }
 
   return {
-    toEmbedding
+    toEmbedding,
+    toEmbeddingOpenAI
   };
 };
 

@@ -44,8 +44,9 @@ const testConnection = async () => {
 
 testConnection();
 
-const { toEmbedding } = TextEncoder();
+const { toEmbedding, toEmbeddingOpenAI } = TextEncoder();
 fastify.decorate('toEmbedding', text => toEmbedding(text));
+fastify.decorate('toEmbeddingOpenAI', text => toEmbeddingOpenAI(text));
 
 // Register CORS
 fastify.register(cors);
@@ -210,6 +211,53 @@ fastify.get('/recommend', async (request, reply) => {
             fastify.log.error('Database error:', dbErr);
             throw dbErr;
         }
+    } catch (err) { 
+        fastify.log.error(err);
+        return reply.status(500).send({ error: 'Recommendation failed' });
+    }
+});
+
+fastify.get('/recommend/v2', async (request, reply) => {
+    try {
+        const { description, limit = 10 } = request.query;
+
+        if (!description) {
+            return reply.status(400).send({ error: 'Description is required' });
+        }
+
+        const embedding = await fastify.toEmbeddingOpenAI(description);
+        // Format the embedding array for PostgreSQL vector type
+        const vectorStr = `[${embedding.join(',')}]`;
+        
+        // Search for similar servers combining BM25 and vector similarity
+        const query = `
+            SELECT id, 
+                   title, 
+                   description,
+                   github_url,
+                   ts_rank(tsv_description, plainto_tsquery('english', $1)) AS bm25_score,
+                   1 - (embedding_small <=> $2::vector) AS vector_score,
+                   COALESCE(0.5 * ts_rank(tsv_description, plainto_tsquery('english', $1)), 0) + 
+                   0.5 * (1 - (embedding_small <=> $2::vector)) AS final_score
+            FROM mcp_servers
+            ORDER BY final_score DESC
+            LIMIT $3;
+        `;
+
+        const result = await pool.query(query, [description, vectorStr, limit]);
+        
+        if (result.rows.length === 0) {
+            fastify.log.info("No results found in the database");
+            return [];
+        }
+
+        return result.rows.map(row => ({
+            id: row.id,
+            title: row.title,
+            description: row.description,
+            github_url: row.github_url,
+            score: row.final_score
+        }));
     } catch (err) { 
         fastify.log.error(err);
         return reply.status(500).send({ error: 'Recommendation failed' });
