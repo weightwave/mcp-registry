@@ -60,7 +60,9 @@ fastify.get('/registry/:id', async (request, reply) => {
   const { id } = request.params as { id: string };
   
   try {
-    const mcp = await RegistryService.getMCPById(id);
+    // Decode the ID since it will be URL encoded in requests
+    const decodedId = decodeURIComponent(id);
+    const mcp = await RegistryService.getMCPById(decodedId);
     if (!mcp) {
       reply.code(404);
       return { error: 'MCP not found' };

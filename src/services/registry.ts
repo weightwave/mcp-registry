@@ -3,37 +3,34 @@ import path from 'path';
 import { MCPConfig } from '../types';
 
 export class RegistryService {
-  private static async scanDirectory(
-    dir: string,
-    registry: MCPConfig[] = [],
-    prefix = ''
-  ): Promise<MCPConfig[]> {
+  private static async scanDirectory(dir: string): Promise<MCPConfig[]> {
+    const registry: MCPConfig[] = [];
     try {
-      const items = await fs.readdir(dir);
-      for (const item of items) {
-        if (item.startsWith('.') || item === 'node_modules') {
-          continue;
-        }
+      // Get all owner directories (@something)
+      const owners = await fs.readdir(dir);
+      
+      for (const owner of owners) {
+        if (!owner.startsWith('@')) continue;
         
-        const fullPath = path.join(dir, item);
-        const mcpJsonPath = path.join(fullPath, 'mcp.json');
-        const relativePath = prefix ? path.join(prefix, item) : item;
+        const ownerPath = path.join(dir, owner);
+        const ownerStat = await fs.stat(ownerPath);
+        if (!ownerStat.isDirectory()) continue;
         
-        try {
-          const stat = await fs.stat(fullPath);
-          if (stat.isDirectory()) {
-            try {
-              const configData = await fs.readFile(mcpJsonPath, 'utf8');
-              const mcpData = JSON.parse(configData) as MCPConfig;
-              registry.push(mcpData);
-            } catch (err) {
-              await RegistryService.scanDirectory(fullPath, registry, relativePath);
-            }
+        // Get all repos under this owner
+        const repos = await fs.readdir(ownerPath);
+        for (const repo of repos) {
+          const mcpPath = path.join(ownerPath, repo, 'mcp.json');
+          try {
+            const configData = await fs.readFile(mcpPath, 'utf8');
+            const mcpData = JSON.parse(configData) as MCPConfig;
+            registry.push(mcpData);
+          } catch (err) {
+            // Skip if mcp.json doesn't exist or can't be read
+            continue;
           }
-        } catch (err) {
-          continue;
         }
       }
+      
       return registry;
     } catch (err) {
       console.error(`Error scanning directory ${dir}:`, err);
